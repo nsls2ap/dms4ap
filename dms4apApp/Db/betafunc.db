@@ -1,0 +1,36 @@
+record(bo, "SR-DMS4AP{BETA}Enbl:Calc-Cmd"){
+    field(VAL, "0")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(waveform, "SR-DMS4AP{BETA}X:Meas-I"){
+    field(DESC, "Measured H Beta")
+    field(FTVL, "DOUBLE")
+    field(NELM, "180")
+}
+record(waveform, "SR-DMS4AP{BETA}Y:Meas-I"){
+    field(DESC, "Measured V Beta")
+    field(FTVL, "DOUBLE")
+    field(NELM, "180")
+}
+record(waveform, "SR-DMS4AP{PHAS}X:Meas-I"){
+    field(DESC, "Measured H phase Ad")
+    field(FTVL, "DOUBLE")
+    field(NELM, "180")
+}
+record(waveform, "SR-DMS4AP{PHAS}Y:Meas-I"){
+    field(DESC, "Measured Y phase Ad")
+    field(FTVL, "DOUBLE")
+    field(NELM, "180")
+}
+record(waveform, "SR-DMS4AP{FFT}X:PSD-I"){
+    field(DESC, "BPM X PSD")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4096")
+}
+record(waveform, "SR-DMS4AP{FFT}Y:PSD-I"){
+    field(DESC, "BPM Y PSD")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4096")
+}
+
