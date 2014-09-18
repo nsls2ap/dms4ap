@@ -1,5 +1,6 @@
 record(stringout, "SR-DMS4AP{LOCALBUMP}DEV:Sel-SP"){
     field(DESC, "selected insertion device for local bump")
+    field(VAL, "NULL")
 }
 # nearby 6 BPMs
 record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}Pos-I"){
@@ -18,27 +19,32 @@ record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I"){
     field(NELM, "6")
 }
 # nearby 4 correctors, for both X & Y
-record(waveform, "SR-DMS4AP{LOCALBUMP:COR}Pos-I"){
-    field(DESC, "s location surround selected ID")
+record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}Pos-I"){
+    field(DESC, "hcor s location surround selected ID")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:X-I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}Pos-I"){
+    field(DESC, "vcor s location surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}PS-I"){
     field(DESC, "Current surround selected ID")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:X-Delta:I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}PS-Delta:I"){
     field(DESC, "changes to be made")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:Y-I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}PS-I"){
     field(DESC, "Current surround selected ID")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:Y-Delta:I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}PS-Delta:I"){
     field(DESC, "changes to be made")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
@@ -72,4 +78,15 @@ record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"){
     field(DESC, "Y plane angle at source point")
     field(VAL, 0.0)
     field(EGU, "mrad")
+}
+# command to apply
+record(bo, "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"){
+    field(DESC, "Apply predicated local bump")
+    field(VAL, 0)
+    field(ZNAM, "Idle")
+    field(ONAM, "Applying")
+}
+record(stringin, "SR-DMS4AP{LOCALBUMP}TS-I"){
+    field(DESC, "Last time of local bump.")
+    field(VAL, "Not Yet since Last Server Reboot.")
 }
