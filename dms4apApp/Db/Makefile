@@ -13,6 +13,7 @@ include $(TOP)/configure/CONFIG
 
 # DB for beta function measurement
 DB += betafunc.db
+DB += idlocalbump.db
 
 ifneq ($(DEVIOCSTATS),)
 DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db

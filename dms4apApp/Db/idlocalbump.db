@@ -1,0 +1,75 @@
+record(stringout, "SR-DMS4AP{LOCALBUMP}DEV:Sel-SP"){
+    field(DESC, "selected insertion device for local bump")
+}
+# nearby 6 BPMs
+record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}Pos-I"){
+    field(DESC, "s location surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "6")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I"){
+    field(DESC, "X orbit surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "6")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I"){
+    field(DESC, "Y orbit surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "6")
+}
+# nearby 4 correctors, for both X & Y
+record(waveform, "SR-DMS4AP{LOCALBUMP:COR}Pos-I"){
+    field(DESC, "s location surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:X-I"){
+    field(DESC, "Current surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:X-Delta:I"){
+    field(DESC, "changes to be made")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:Y-I"){
+    field(DESC, "Current surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:COR}PS:Y-Delta:I"){
+    field(DESC, "changes to be made")
+    field(FTVL, "DOUBLE")
+    field(NELM, "4")
+}
+# source point for insertion local bump
+record(ao, "SR-DMS4AP{LOCALBUMP}S-SP"){
+    field(DESC, "s for local bump source point")
+}
+record(mbbo, "SR-DMS4AP{LOCALBUMP}PLANE-SP"){
+    field(DESC, "PLANE for local bump source point")
+    field(ZRST, "XY Plane")
+    field(ONST, "X Plane")
+    field(TWST, "Y Plane")
+}
+record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:X-SP"){
+    field(DESC, "X plane shift at source point")
+    field(VAL, 0.0)
+    field(EGU, "mm")
+}
+record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:Y-SP"){
+    field(DESC, "Y plane shift at source point")
+    field(VAL, 0.0)
+    field(EGU, "mm")
+}
+record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:X-SP"){
+    field(DESC, "X plane angle at source point")
+    field(VAL, 0.0)
+    field(EGU, "mrad")
+}
+record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"){
+    field(DESC, "Y plane angle at source point")
+    field(VAL, 0.0)
+    field(EGU, "mrad")
+}
