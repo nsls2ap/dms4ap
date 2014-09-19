@@ -19,13 +19,8 @@ record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I"){
     field(NELM, "6")
 }
 # nearby 4 correctors, for both X & Y
-record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}Pos-I"){
-    field(DESC, "hcor s location surround selected ID")
-    field(FTVL, "DOUBLE")
-    field(NELM, "4")
-}
-record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}Pos-I"){
-    field(DESC, "vcor s location surround selected ID")
+record(waveform, "SR-DMS4AP{LOCALBUMP:COR}Pos-I"){
+    field(DESC, "cors location surround selected ID")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
@@ -85,6 +80,12 @@ record(bo, "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"){
     field(VAL, 0)
     field(ZNAM, "Idle")
     field(ONAM, "Applying")
+}
+record(bo, "SR-DMS4AP{LOCALBUMP}Enbl:Calc-Cmd"){
+    field(DESC, "Computing a new local bump")
+    field(VAL, 0)
+    field(ZNAM, "Idle")
+    field(ONAM, "Computing")
 }
 record(stringin, "SR-DMS4AP{LOCALBUMP}TS-I"){
     field(DESC, "Last time of local bump.")
