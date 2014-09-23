@@ -129,7 +129,6 @@ class IdLocalBump():
                             bpm_s.append(bpms[i].se)
                             orbx.append(bpms[i].x)
                             orby.append(bpms[i].y)
-                            print bpms[i].pv(handle='readback')
                     cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount/2)
                     hcor = []
                     vcor = []
