@@ -16,10 +16,10 @@ class PvMapping(object):
         self.__bpmorbity__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I"
 
         self.__correctorposition__ = "SR-DMS4AP{LOCALBUMP:COR}Pos-I"
-        self.__hcorrectorcurrent__ = "SR-DMS4AP{LOCALBUMP:HCOR}PS-I"
-        self.__hcorrectordiff__ = "SR-DMS4AP{LOCALBUMP:HCOR}PS-Delta:I"
-        self.__vcorrectorcurrent__ = "SR-DMS4AP{LOCALBUMP:VCOR}PS-I"
-        self.__vcorrectordiff__ = "SR-DMS4AP{LOCALBUMP:VCOR}PS-Delta:I"
+        self.__hcorrectorcurrent__ = "SR-DMS4AP{LOCALBUMP:HCOR}PS-SP"
+        self.__hcorrectordiff__ = "SR-DMS4AP{LOCALBUMP:HCOR}PS:Delta-SP"
+        self.__vcorrectorcurrent__ = "SR-DMS4AP{LOCALBUMP:VCOR}PS-SP"
+        self.__vcorrectordiff__ = "SR-DMS4AP{LOCALBUMP:VCOR}PS:Delta-SP"
 
         self.__calc__ = "SR-DMS4AP{LOCALBUMP}Enbl:Calc-Cmd"
         self.__apply__ = "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"

@@ -24,22 +24,22 @@ record(waveform, "SR-DMS4AP{LOCALBUMP:COR}Pos-I"){
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}PS-I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}PS-SP"){
     field(DESC, "Current surround selected ID")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}PS-Delta:I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:HCOR}PS:Delta-SP"){
     field(DESC, "changes to be made")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}PS-I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}PS-SP"){
     field(DESC, "Current surround selected ID")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
 }
-record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}PS-Delta:I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP:VCOR}PS:Delta-SP"){
     field(DESC, "changes to be made")
     field(FTVL, "DOUBLE")
     field(NELM, "4")
@@ -58,21 +58,25 @@ record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:X-SP"){
     field(DESC, "X plane shift at source point")
     field(VAL, 0.0)
     field(EGU, "mm")
+    field(PREC, "6")
 }
 record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:Y-SP"){
     field(DESC, "Y plane shift at source point")
     field(VAL, 0.0)
     field(EGU, "mm")
+    field(PREC, "6")
 }
 record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:X-SP"){
     field(DESC, "X plane angle at source point")
     field(VAL, 0.0)
     field(EGU, "mrad")
+    field(PREC, "6")
 }
 record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"){
     field(DESC, "Y plane angle at source point")
     field(VAL, 0.0)
     field(EGU, "mrad")
+    field(PREC, "6")
 }
 # command to apply
 record(bo, "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"){
