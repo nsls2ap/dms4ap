@@ -50,6 +50,7 @@ class IdLocalBump():
     def deviceselectioncallback(self, value):
         """Set selected device name when it is changed."""
         self.selecteddevice = value
+        self._updatelocalbump()
 
     def monitordeviceselection(self):
         """Start a process to monitor device selection."""
@@ -99,79 +100,98 @@ class IdLocalBump():
     def _monitororbit(self, bpms):
         """"""
         while self.continuelocalbumporbitthread:
+            #@TODO: a bug to be fixed.
+            # ValueError: setting an array element with a sequence.
             orbx = []
             orby = []
             for i in range(len(bpms)):
                 if i != self.bpmcounts / 2:
                     orbx.append(bpms[i].x)
                     orby.append(bpms[i].y)
-
-            ca.caput([self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__],
-                     [orbx, orby])
+            try:
+                ca.caput([self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__],
+                         [orbx, orby])
+            except ca.ca_nothing:
+                pass
             cothread.Sleep(1.0)
         else:
             print "Stop update local bump orbit."
 
-    def verifycallback(self, value):
-        """Computing a new local bump"""
-        if value == 1:
-            print "start local bump computing for %s" % self.selecteddevice
-            if self.selecteddevice == "NULL":
-                self._cleanlocalbump()
-            else:
-                try:
-                    bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts/2)
-                    orbx = []
-                    orby = []
-                    bpm_s = []
-                    for i in range(len(bpms)):
-                        if i != self.bpmcounts / 2:
-                            bpm_s.append(bpms[i].se)
-                            orbx.append(bpms[i].x)
-                            orby.append(bpms[i].y)
-                    cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount/2)
-                    hcor = []
-                    vcor = []
-                    cor_s = []
-                    for i in range(len(cors)):
-                        if i != self.corscount/2:
-                            hcor.append(cors[i].get("x", handle="setpoint"))
-                            vcor.append(cors[i].get("y", handle="setpoint"))
-                            cor_s.append(cors[i].se)
-                    ca.caput([self.pvmapping.__bpmposition__,
-                              self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
-                              self.pvmapping.__correctorposition__,
-                              self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
-                             [bpm_s, orbx, orby, cor_s, hcor, vcor])
-
-                    # Stop previous existing thread.
-                    if self.continuelocalbumporbitthread:
-                        self.continuelocalbumporbitthread = False
-                        if self.localbumporbitthread is not None:
-                            self.localbumporbitthread.Wait()
-
-                    self.continuelocalbumporbitthread = True
-                    self.localbumporbitthread = cothread.Spawn(self._monitororbit, bpms)
-                except AttributeError:
-                    try:
-                        ca.caput(value.name, 0)
-                    except ca.ca_nothing:
-                        print "Cannot reset calc pvs after finished."
-                    return
-
+    def _updatelocalbump(self):
+        #print "start local bump computing for %s" % self.selecteddevice
+        if self.selecteddevice == "NULL":
+            self._cleanlocalbump()
+        else:
             try:
-                ca.caput(value.name, 0)
-            except ca.ca_nothing:
-                print "Cannot reset verifying pvs after finished."
+                bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts/2)
+                orbx = []
+                orby = []
+                bpm_s = []
+                for i in range(len(bpms)):
+                    if i != self.bpmcounts / 2:
+                        bpm_s.append(bpms[i].se)
+                        orbx.append(bpms[i].x)
+                        orby.append(bpms[i].y)
+                cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount/2)
+                hcor = []
+                vcor = []
+                cor_s = []
+                for i in range(len(cors)):
+                    if i != self.corscount/2:
+                        hcor.append(cors[i].get("x", handle="setpoint"))
+                        vcor.append(cors[i].get("y", handle="setpoint"))
+                        cor_s.append(cors[i].se)
+                ca.caput([self.pvmapping.__bpmposition__,
+                          self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
+                          self.pvmapping.__correctorposition__,
+                          self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
+                         [bpm_s, orbx, orby, cor_s, hcor, vcor])
 
-    def monitorverify(self):
-        """Monitor the PV to trig local bump computing."""
-        return ca.camonitor(self.pvmapping.__calc__, self.verifycallback)
+                # Stop previous existing thread.
+                if self.continuelocalbumporbitthread:
+                    self.continuelocalbumporbitthread = False
+                    if self.localbumporbitthread is not None:
+                        self.localbumporbitthread.Wait()
+
+                self.continuelocalbumporbitthread = True
+                self.localbumporbitthread = cothread.Spawn(self._monitororbit, bpms)
+            except AttributeError:
+                # try:
+                #     ca.caput(value.name, 0)
+                # except ca.ca_nothing:
+                #     print "Cannot reset calc pvs after finished."
+                return
+
+        # try:
+        #     ca.caput(value.name, 0)
+        # except ca.ca_nothing:
+        #     print "Cannot reset verifying pvs after finished."
+
+    # def monitorverify(self):
+    #     """Monitor the PV to trig local bump computing."""
+    #     return ca.camonitor(self.pvmapping.__calc__, self.verifycallback)
+
+    def _aplocalbumpcreation(self, plane, ename, source, bumpsettings):
+        """
+        plane: 0: X plane, 1: Y plane;
+        ename: selected insertion device element name;
+        source: s position at source position
+        bumpsettings: local bump settings: [x shift, y shift, x angle, y angle]
+
+        return: delta correctors [H, V]
+        """
 
     def applycallback(self, value):
         """Apply computed results"""
         if value == 1:
+            hcor, vcor = self._aplocalbumpcreation(self.plane, self.selecteddevice, self.source, self.bumpsettings)
             try:
+                if self.plane == 0:
+                    # show settings for x plane
+                    ca.caput(self.pvmapping.__hcorrectordiff__, hcor, wait=True)
+                elif self.plane == 1:
+                    # show settings for y plane
+                    ca.caput(self.pvmapping.__vcorrectordiff__, vcor, wait=True)
                 ca.caput(value.name, 0)
                 ca.caput(self.pvmapping.__status__, time.strftime("%a, %d %b %Y, %H:%M:%S %Z"))
             except ca.ca_nothing:
@@ -208,7 +228,7 @@ if __name__ == "__main__":
     idlocalbump.monitordeviceselection()
     idlocalbump.monitorsource()
     idlocalbump.monitorplane()
-    idlocalbump.monitorverify()
+    # idlocalbump.monitorverify()
     idlocalbump.monitorapply()
 
     idlocalbump.startshell()

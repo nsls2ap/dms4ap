@@ -50,9 +50,9 @@ record(ao, "SR-DMS4AP{LOCALBUMP}S-SP"){
 }
 record(mbbo, "SR-DMS4AP{LOCALBUMP}PLANE-SP"){
     field(DESC, "PLANE for local bump source point")
-    field(ZRST, "XY Plane")
-    field(ONST, "X Plane")
-    field(TWST, "Y Plane")
+    field(ZRST, "X Plane")
+    field(ONST, "Y Plane")
+    #field(TWST, "XY Plane")
 }
 record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:X-SP"){
     field(DESC, "X plane shift at source point")
@@ -79,12 +79,12 @@ record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"){
     field(PREC, "6")
 }
 # command to apply
-record(bo, "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"){
-    field(DESC, "Apply predicated local bump")
-    field(VAL, 0)
-    field(ZNAM, "Idle")
-    field(ONAM, "Applying")
-}
+#record(bo, "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"){
+#    field(DESC, "Apply predicated local bump")
+#    field(VAL, 0)
+#    field(ZNAM, "Idle")
+#    field(ONAM, "Applying")
+#}
 record(bo, "SR-DMS4AP{LOCALBUMP}Enbl:Calc-Cmd"){
     field(DESC, "Computing a new local bump")
     field(VAL, 0)
