@@ -5,6 +5,8 @@ import code
 import time
 import numpy as np
 
+import traceback
+
 import cothread
 import cothread.catools as ca
 
@@ -95,27 +97,47 @@ class IdLocalBump():
                      [bpms, bpms, bpms, cors, cors, cors, cors, cors])
 
         except ca.ca_nothing:
+            print traceback.print_exc()
             print "Cannot clean devices for local bump"
 
     def _monitororbit(self, bpms):
         """"""
+        orbx = [0.0] * (len(bpms) - 1)
+        orby = [0.0] * (len(bpms) - 1)
         while self.continuelocalbumporbitthread:
             #@TODO: a bug to be fixed.
             # ValueError: setting an array element with a sequence.
-            orbx = []
-            orby = []
             for i in range(len(bpms)):
-                if i != self.bpmcounts / 2:
-                    orbx.append(bpms[i].x)
-                    orby.append(bpms[i].y)
+                if i < self.bpmcounts / 2:
+                    x = bpms[i].x
+                    if isinstance(x, ca.ca_nothing):
+                        orbx[i] = 0.0
+                    else:
+                        orbx[i] = x
+                    y = bpms[i].y
+                    if isinstance(y, ca.ca_nothing):
+                        orby[i] = 0.0
+                    else:
+                        orby[i] = y
+                elif i > self.bpmcounts / 2 + 1:
+                    x = bpms[i].x
+                    if isinstance(x, ca.ca_nothing):
+                        orbx[i-1] = 0.0
+                    else:
+                        orbx[i-1] = x
+                    y = bpms[i].y
+                    if isinstance(y, ca.ca_nothing):
+                        orby[i-1] = 0.0
+                    else:
+                        orby[i-1] = y
+
             try:
                 ca.caput([self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__],
                          [orbx, orby])
             except ca.ca_nothing:
-                pass
+                print orbx, orby
+                print traceback.print_exc()
             cothread.Sleep(1.0)
-        else:
-            print "Stop update local bump orbit."
 
     def _updatelocalbump(self):
         #print "start local bump computing for %s" % self.selecteddevice
@@ -161,6 +183,8 @@ class IdLocalBump():
                 # except ca.ca_nothing:
                 #     print "Cannot reset calc pvs after finished."
                 return
+            except TypeError:
+                print "Get a type error in monitor device selection"
 
         # try:
         #     ca.caput(value.name, 0)
@@ -184,14 +208,14 @@ class IdLocalBump():
     def applycallback(self, value):
         """Apply computed results"""
         if value == 1:
-            hcor, vcor = self._aplocalbumpcreation(self.plane, self.selecteddevice, self.source, self.bumpsettings)
+            # hcor, vcor = self._aplocalbumpcreation(self.plane, self.selecteddevice, self.source, self.bumpsettings)
             try:
-                if self.plane == 0:
-                    # show settings for x plane
-                    ca.caput(self.pvmapping.__hcorrectordiff__, hcor, wait=True)
-                elif self.plane == 1:
-                    # show settings for y plane
-                    ca.caput(self.pvmapping.__vcorrectordiff__, vcor, wait=True)
+                # if self.plane == 0:
+                #     # show settings for x plane
+                #     ca.caput(self.pvmapping.__hcorrectordiff__, hcor, wait=True)
+                # elif self.plane == 1:
+                #     # show settings for y plane
+                #     ca.caput(self.pvmapping.__vcorrectordiff__, vcor, wait=True)
                 ca.caput(value.name, 0)
                 ca.caput(self.pvmapping.__status__, time.strftime("%a, %d %b %Y, %H:%M:%S %Z"))
             except ca.ca_nothing:
@@ -211,8 +235,9 @@ class IdLocalBump():
 
     def stopmonitor(self):
         """Stop all cothread monitors"""
-        if self.idlocalbumpthread is not None:
+        if self.idlocalbumpthread is not None and self.continuelocalbumporbitthread:
             print "Abort cothread spawn sub-thread."
+            self.continuelocalbumporbitthread = False
             self.idlocalbumpthread.Wait()
         cothread.Quit()
 

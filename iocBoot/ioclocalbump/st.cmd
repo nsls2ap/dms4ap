@@ -17,3 +17,7 @@ dbLoadRecords "iocsim/bpm_cor.db"
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit
+
+cd "../../iocsim/"
+system("python initpvs.py")
+cd ${TOP}/iocBoot/${IOC}
