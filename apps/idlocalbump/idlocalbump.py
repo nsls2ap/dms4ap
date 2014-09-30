@@ -204,18 +204,22 @@ class IdLocalBump():
 
         return: delta correctors [H, V]
         """
+        if plane == 0:
+            delta = ap.setIdBump(ename, bumpsettings[0], bumpsettings[2], plane="x")
+        elif plane == 1:
+            delta = ap.setIdBump(ename, bumpsettings[1], bumpsettings[3], plane="y")
 
     def applycallback(self, value):
         """Apply computed results"""
         if value == 1:
-            # hcor, vcor = self._aplocalbumpcreation(self.plane, self.selecteddevice, self.source, self.bumpsettings)
+            delta = self._aplocalbumpcreation(self.plane, self.selecteddevice.lower(), self.source, self.bumpsettings)
             try:
-                # if self.plane == 0:
-                #     # show settings for x plane
-                #     ca.caput(self.pvmapping.__hcorrectordiff__, hcor, wait=True)
-                # elif self.plane == 1:
-                #     # show settings for y plane
-                #     ca.caput(self.pvmapping.__vcorrectordiff__, vcor, wait=True)
+                if self.plane == 0:
+                    # show settings for x plane
+                    ca.caput(self.pvmapping.__hcorrectordiff__, delta, wait=True)
+                elif self.plane == 1:
+                    # show settings for y plane
+                    ca.caput(self.pvmapping.__vcorrectordiff__, delta, wait=True)
                 ca.caput(value.name, 0)
                 ca.caput(self.pvmapping.__status__, time.strftime("%a, %d %b %Y, %H:%M:%S %Z"))
             except ca.ca_nothing:
