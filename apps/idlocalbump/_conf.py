@@ -21,6 +21,6 @@ class PvMapping(object):
         self.__vcorrectorcurrent__ = "SR-DMS4AP{LOCALBUMP:VCOR}PS-SP"
         self.__vcorrectordiff__ = "SR-DMS4AP{LOCALBUMP:VCOR}PS:Delta-SP"
 
-        #self.__calc__ = "SR-DMS4AP{LOCALBUMP}Enbl:Calc-Cmd"
+        self.__undo__ = "SR-DMS4AP{LOCALBUMP}Enbl:Undo-Cmd"
         self.__apply__ = "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"
         self.__status__ = "SR-DMS4AP{LOCALBUMP}TS-I"

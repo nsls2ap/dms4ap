@@ -145,7 +145,7 @@ $(pv_value)</tooltip>
       <height_scalable>true</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <format_type>0</format_type>
+    <format_type>4</format_type>
     <precision_from_pv>false</precision_from_pv>
     <transparent>false</transparent>
     <pv_name>SR-DMS4AP{LOCALBUMP}TS-I</pv_name>
@@ -1075,64 +1075,206 @@ $(trace_0_y_pv_value)</tooltip>
     <trace_3_y_pv_value />
     <trace_0_update_delay>100</trace_0_update_delay>
   </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
-    <border_alarm_sensitive>false</border_alarm_sensitive>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
     <visible>true</visible>
-    <wuid>-6a09a26f:14889935bef:-7c8c</wuid>
-    <password></password>
+    <wuid>-216016c2:148cd27f4a8:-7fa8</wuid>
     <scripts />
-    <on_color>
-      <color red="0" green="255" blue="0" />
-    </on_color>
-    <height>49</height>
-    <show_led>false</show_led>
-    <data_type>0</data_type>
-    <name>Boolean Button_1</name>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <show_boolean_label>true</show_boolean_label>
+    <height>82</height>
+    <name></name>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
-      <keep_wh_ratio>true</keep_wh_ratio>
+      <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <off_color>
-      <color red="0" green="100" blue="0" />
-    </off_color>
-    <pv_name>SR-DMS4AP{LOCALBUMP}Enbl-Cmd</pv_name>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
     <background_color>
       <color red="240" green="240" blue="240" />
     </background_color>
-    <foreground_color>
-      <color red="0" green="0" blue="0" />
-    </foreground_color>
-    <off_label>Apply</off_label>
-    <released_action_index>0</released_action_index>
-    <widget_type>Boolean Button</widget_type>
     <enabled>true</enabled>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <widget_type>Grouping Container</widget_type>
     <font>
       <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
-    <width>97</width>
-    <border_style>0</border_style>
-    <push_action_index>0</push_action_index>
-    <confirm_message>Are your sure you want to do this?</confirm_message>
-    <effect_3d>true</effect_3d>
+    <width>130</width>
+    <border_style>13</border_style>
     <rules />
-    <pv_value />
-    <bit>-1</bit>
-    <toggle_button>true</toggle_button>
-    <show_confirm_dialog>0</show_confirm_dialog>
+    <fc>false</fc>
+    <lock_children>true</lock_children>
     <border_width>1</border_width>
-    <on_label>Applying...</on_label>
-    <square_button>true</square_button>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <y>70</y>
+    <y>54</y>
     <actions hook="false" hook_all="false" />
-    <tooltip>$(pv_name)
+    <x>942</x>
+    <tooltip></tooltip>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <wuid>-216016c2:148cd27f4a8:-7fe5</wuid>
+      <password></password>
+      <scripts />
+      <on_color>
+        <color red="0" green="255" blue="0" />
+      </on_color>
+      <height>49</height>
+      <show_led>false</show_led>
+      <data_type>0</data_type>
+      <name>Boolean Button_1</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <show_boolean_label>true</show_boolean_label>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <off_color>
+        <color red="0" green="100" blue="0" />
+      </off_color>
+      <pv_name>SR-DMS4AP{LOCALBUMP}Enbl:Undo-Cmd</pv_name>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <off_label>Undo</off_label>
+      <released_action_index>0</released_action_index>
+      <widget_type>Boolean Button</widget_type>
+      <enabled>true</enabled>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>97</width>
+      <border_style>0</border_style>
+      <push_action_index>0</push_action_index>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <effect_3d>true</effect_3d>
+      <rules />
+      <pv_value />
+      <bit>-1</bit>
+      <toggle_button>true</toggle_button>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <border_width>1</border_width>
+      <on_label>Undoing</on_label>
+      <square_button>true</square_button>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <y>0</y>
+      <actions hook="false" hook_all="false" />
+      <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-    <x>1140</x>
+      <x>0</x>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>-216016c2:148cd27f4a8:-7fa6</wuid>
+    <scripts />
+    <height>82</height>
+    <name></name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <enabled>true</enabled>
+    <widget_type>Grouping Container</widget_type>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+    </font>
+    <width>130</width>
+    <border_style>13</border_style>
+    <rules />
+    <fc>false</fc>
+    <lock_children>true</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <y>55</y>
+    <actions hook="false" hook_all="false" />
+    <x>1110</x>
+    <tooltip></tooltip>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <wuid>-6a09a26f:14889935bef:-7c8c</wuid>
+      <password></password>
+      <scripts />
+      <on_color>
+        <color red="0" green="255" blue="0" />
+      </on_color>
+      <height>49</height>
+      <show_led>false</show_led>
+      <data_type>0</data_type>
+      <name>Boolean Button_1</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <show_boolean_label>true</show_boolean_label>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <off_color>
+        <color red="0" green="100" blue="0" />
+      </off_color>
+      <pv_name>SR-DMS4AP{LOCALBUMP}Enbl-Cmd</pv_name>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <off_label>Apply</off_label>
+      <released_action_index>0</released_action_index>
+      <widget_type>Boolean Button</widget_type>
+      <enabled>true</enabled>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>97</width>
+      <border_style>0</border_style>
+      <push_action_index>0</push_action_index>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <effect_3d>true</effect_3d>
+      <rules />
+      <pv_value />
+      <bit>-1</bit>
+      <toggle_button>true</toggle_button>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <border_width>1</border_width>
+      <on_label>Applying...</on_label>
+      <square_button>true</square_button>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <y>0</y>
+      <actions hook="false" hook_all="false" />
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>0</x>
+    </widget>
   </widget>
 </display>

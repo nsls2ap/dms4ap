@@ -85,13 +85,19 @@ record(bo, "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"){
     field(ZNAM, "Idle")
     field(ONAM, "Applying")
 }
-#record(bo, "SR-DMS4AP{LOCALBUMP}Enbl:Calc-Cmd"){
-#    field(DESC, "Computing a new local bump")
-#    field(VAL, 0)
-#    field(ZNAM, "Idle")
-#    field(ONAM, "Computing")
+record(bo, "SR-DMS4AP{LOCALBUMP}Enbl:Undo-Cmd"){
+    field(DESC, "Computing a new local bump")
+    field(VAL, 0)
+    field(ZNAM, "Undo")
+    field(ONAM, "Undoing...")
+}
+#record(stringin, "SR-DMS4AP{LOCALBUMP}TS-I"){
+#    field(DESC, "Last time of local bump.")
+#    field(VAL, "Not Yet since Last Server Reboot.")
 #}
-record(stringin, "SR-DMS4AP{LOCALBUMP}TS-I"){
+record(waveform, "SR-DMS4AP{LOCALBUMP}TS-I"){
     field(DESC, "Last time of local bump.")
     field(VAL, "Not Yet since Last Server Reboot.")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
 }
