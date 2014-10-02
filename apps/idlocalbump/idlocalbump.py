@@ -91,8 +91,8 @@ class IdLocalBump():
                 cors = cors.pop(self.corscount / 2 + 1)
                 self.cors = cors[:]
                 for cor in self.cors:
-                    hcor.append(cor.get("x", handle="setpoint"))
-                    vcor.append(cor.get("y", handle="setpoint"))
+                    hcor.append(cor.get("x", unitsys=None, handle="setpoint"))
+                    vcor.append(cor.get("y", unitsys=None, handle="setpoint"))
                     cor_s.append(cor.se)
 
                 ca.caput([self.pvmapping.__bpmposition__,
@@ -190,12 +190,12 @@ class IdLocalBump():
                 else:
                     orby[i] = y
             for i, cor in enumerate(self.cors):
-                h = cor.get("x", handle="setpoint")
+                h = cor.get("x", unitsys=None, handle="setpoint")
                 if isinstance(h, ca.ca_nothing):
                     hcor[i] = 0.0
                 else:
                     hcor[i] = h
-                v = cor.get("y", handle="setpoint")
+                v = cor.get("y", unitsys=None, handle="setpoint")
                 if isinstance(v, ca.ca_nothing):
                     vcor[i] = 0.0
                 else:
@@ -218,7 +218,7 @@ class IdLocalBump():
                                  datatype=DBR_CHAR_STR)
                     else:
                         for i, cor in enumerate(self.cors):
-                             cor.put(self.previoush[i], "x", handle="setpoint")
+                             cor.set("x", self.previoush[i], unitsys=None)
                         self.previoush = None
                 elif self.plane == 1:
                     if self.previousv is None:
@@ -226,7 +226,7 @@ class IdLocalBump():
                                  datatype=DBR_CHAR_STR)
                     else:
                         for i, cor in enumerate(self.cors):
-                            cor.put(self.previousv[i], "y", handle="setpoint")
+                            cor.set("y", self.previousv[i], unitsys=None)
                         self.previousv = None
                 ca.caput(value.name, 0)
             except ca.ca_nothing:
@@ -253,13 +253,13 @@ class IdLocalBump():
             if self.previoush is None:
                 self.previoush = [0.0] * self.corscount
             for i, cor in enumerate(self.cors):
-                self.previoush[i] = cor.get("x", handle="setpoint")
+                self.previoush[i] = cor.get("x", unitsys=None, handle="setpoint")
             delta = ap.setIdBump(ename, bumpsettings[0], bumpsettings[2], plane="x")
         elif plane == 1:
             if self.previousv is None:
                 self.previousv = [0.0] * self.corscount
             for i, cor in enumerate(self.cors):
-                self.previousv[i] = cor.get("y", handle="setpoint")
+                self.previousv[i] = cor.get("y", unitsys=None, handle="setpoint")
             delta = ap.setIdBump(ename, bumpsettings[1], bumpsettings[3], plane="y")
 
         return delta
