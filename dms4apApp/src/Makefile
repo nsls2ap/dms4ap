@@ -25,18 +25,18 @@ dms4ap_SRCS += dms4ap_registerRecordDeviceDriver.cpp
 dms4ap_SRCS_DEFAULT += dms4apMain.cpp
 
 ifneq ($(DEVIOCSTATS),)
-dispMeas_DBD += devIocStats.dbd
-dispMeas_LIBS += devIocStats
+dms4ap_DBD += devIocStats.dbd
+dms4ap_LIBS += devIocStats
 endif
 
 ifneq ($(AUTOSAVE),)
-dispMeas_DBD += asSupport.dbd
-dispMeas_LIBS += autosave
+dms4ap_DBD += asSupport.dbd
+dms4ap_LIBS += autosave
 endif
 
 ifneq ($(CAPUTLOG),)
-dispMeas_DBD += caPutLog.dbd
-dispMeas_LIBS += caPutLog
+dms4ap_DBD += caPutLog.dbd
+dms4ap_LIBS += caPutLog
 endif
 
 # Finally link to the EPICS Base libraries
