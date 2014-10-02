@@ -70,13 +70,14 @@ class IdLocalBump():
                     assert len(bpms) == self.bpmcounts + 1
                     assert len(cors) == self.corscount + 1
                 except AssertionError:
+                    print "wrong devices"
                     return
 
                 orbx = []
                 orby = []
                 bpm_s = []
                 # delete the element in the middle, which is the insertion device itself
-                bpms.pop(self.bpmcounts / 2 + 1)
+                bpms.pop(self.bpmcounts / 2)
                 self.bpms = bpms[:]
 
                 for bpm in self.bpms:
@@ -88,7 +89,7 @@ class IdLocalBump():
                 vcor = []
                 cor_s = []
                 # delete the element in the middle, which is the insertion device itself
-                cors = cors.pop(self.corscount / 2 + 1)
+                cors.pop(self.corscount / 2)
                 self.cors = cors[:]
                 for cor in self.cors:
                     hcor.append(cor.get("x", unitsys=None, handle="setpoint"))
@@ -108,14 +109,13 @@ class IdLocalBump():
                         self.localbumporbitthread.Wait()
 
                 self.continuelocalbumporbitthread = True
-                self.localbumporbitthread = cothread.Spawn(self._monitororbit, bpms, cors)
+                self.localbumporbitthread = cothread.Spawn(self._monitororbit)
             except AttributeError:
-                # try:
-                #     ca.caput(value.name, 0)
-                # except ca.ca_nothing:
-                #     print "Cannot reset calc pvs after finished."
+                print traceback.format_exc()
+                print "AttributeError"
                 return
             except TypeError:
+                print traceback.format_exc()
                 print "Get a type error in monitor device selection"
 
     def deviceselectioncallback(self, value):
