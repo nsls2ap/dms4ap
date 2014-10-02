@@ -46,6 +46,7 @@ class IdLocalBump():
 
         self.cors = None
         self.bpms = None
+        self.idobj = None
 
         self.previoush = None
         self.previousv = None
@@ -62,10 +63,12 @@ class IdLocalBump():
             self._cleanlocalbump()
             self.bpms = None
             self.cors = None
+            self.idobj = None
         else:
             try:
                 bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts / 2)
                 cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount / 2)
+                self.idobj = ap.getElements(self.selecteddevice.lower())[0]
                 try:
                     assert len(bpms) == self.bpmcounts + 1
                     assert len(cors) == self.corscount + 1
@@ -96,11 +99,11 @@ class IdLocalBump():
                     vcor.append(cor.get("y", unitsys=None, handle="setpoint"))
                     cor_s.append(cor.se)
 
-                ca.caput([self.pvmapping.__bpmposition__,
+                ca.caput([self.pvmapping.__idposinfo__, self.pvmapping.__bpmposition__,
                           self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
                           self.pvmapping.__correctorposition__,
                           self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
-                         [bpm_s, orbx, orby, cor_s, hcor, vcor])
+                         [[self.idobj.sb, (self.idobj.sb+self.idobj.se)/2.0, self.idobj.se], bpm_s, orbx, orby, cor_s, hcor, vcor])
 
                 # Stop previous existing thread.
                 if self.continuelocalbumporbitthread:
@@ -169,6 +172,18 @@ class IdLocalBump():
             print traceback.print_exc()
             print "Cannot clean devices for local bump"
 
+    def _getliveangleandpos(self, bpm0, bpm1):
+        """"""
+        if self.plane == 0:
+            p0 = bpm0.x
+            p1 = bpm1.x
+        elif self.plane == 1:
+            p0 = bpm0.y
+            p1 = bpm1.y
+        angle = (p1 - p0)/(bpm1.se - bpm0.se)
+        position = angle * (self.idobj.se-self.idobj.sb)/2.0 + p0
+        return angle, position
+
     def _monitororbit(self):
         """"""
         orbx = [0.0] * self.bpmcounts
@@ -178,6 +193,18 @@ class IdLocalBump():
 
         while self.continuelocalbumporbitthread:
             # ValueError: setting an array element with a sequence.
+            msg = "Local bump for %s"%self.selecteddevice
+            if self.bpms is None or self.cors is None or self.idobj is None:
+                msg = "No Device selected."
+            try:
+                ca.caput(self.pvmapping.__status__, msg,
+                         datatype=DBR_CHAR_STR)
+            except ca.ca_nothing:
+                print "Cound not set status pv."
+                return
+            if self.bpms is None or self.cors is None or self.idobj is None:
+                return
+                
             for i, bpm in enumerate(self.bpms):
                 x = bpm.x
                 if isinstance(x, ca.ca_nothing):
@@ -200,10 +227,12 @@ class IdLocalBump():
                     vcor[i] = 0.0
                 else:
                     vcor[i] = v
+            angle, position = self._getliveangleandpos(self.bpms[self.bpmcounts/2-1], self.bpms[self.bpmcounts/2])
             try:
-                ca.caput([self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
+                ca.caput([self.pvmapping.__anglerb__, self.pvmapping.__positionrb__,
+                          self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
                           self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
-                         [orbx, orby, hcor, vcor])
+                         [angle, position, orbx, orby, hcor, vcor])
             except ca.ca_nothing:
                 print traceback.print_exc()
             cothread.Sleep(1.0)

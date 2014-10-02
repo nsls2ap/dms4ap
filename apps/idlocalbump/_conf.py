@@ -1,4 +1,3 @@
-
 class PvMapping(object):
     def __init__(self):
         """Configuration for PVs used by creating a local bump nearby insertion device.
@@ -10,6 +9,8 @@ class PvMapping(object):
         self.__yshift__ = "SR-DMS4AP{LOCALBUMP}SHIFT:Y-SP"
         self.__xangle__ = "SR-DMS4AP{LOCALBUMP}ANGLE:X-SP"
         self.__yangle__ = "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"
+        self.__anglerb__ = "SR-DMS4AP{LOCALBUMP}ANGLE-I"
+        self.__positionrb__ = "SR-DMS4AP{LOCALBUMP}POS-I"
 
         self.__bpmposition__ = "SR-DMS4AP{LOCALBUMP:BPM}Pos-I"
         self.__bpmorbitx__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I"
@@ -24,3 +25,4 @@ class PvMapping(object):
         self.__undo__ = "SR-DMS4AP{LOCALBUMP}Enbl:Undo-Cmd"
         self.__apply__ = "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"
         self.__status__ = "SR-DMS4AP{LOCALBUMP}TS-I"
+        self.__idposinfo__ = "SR-DMS4AP{LOCALBUMP}S-I"
