@@ -51,6 +51,8 @@ class IdLocalBump():
         self.previoush = None
         self.previousv = None
 
+        self.sourceposition = 0.0
+
         self._getwfsize()
 
     def _getwfsize(self):
@@ -64,11 +66,17 @@ class IdLocalBump():
             self.bpms = None
             self.cors = None
             self.idobj = None
+            try:
+                ca.caput([self.pvmapping.__srcposition__, self.pvmapping.__srcposition__ + ".DRVH"],
+                         [0.0, 0.0])
+            except ca.ca_nothing:
+                print traceback.print_exc()
         else:
             try:
                 bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts / 2)
                 cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount / 2)
                 self.idobj = ap.getElements(self.selecteddevice.lower())[0]
+
                 try:
                     assert len(bpms) == self.bpmcounts + 1
                     assert len(cors) == self.corscount + 1
@@ -99,11 +107,14 @@ class IdLocalBump():
                     vcor.append(cor.get("y", unitsys=None, handle="setpoint"))
                     cor_s.append(cor.se)
 
-                ca.caput([self.pvmapping.__idposinfo__, self.pvmapping.__bpmposition__,
+                ca.caput([self.pvmapping.__srcposition__, self.pvmapping.__srcposition__+".DRVH",
+                          self.pvmapping.__idposinfo__, self.pvmapping.__bpmposition__,
                           self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
                           self.pvmapping.__correctorposition__,
                           self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
-                         [[self.idobj.sb, (self.idobj.sb+self.idobj.se)/2.0, self.idobj.se], bpm_s, orbx, orby, cor_s, hcor, vcor])
+                         [(self.idobj.se - self.idobj.sb)/2.0, (self.idobj.se - self.idobj.sb),
+                          [self.idobj.sb, (self.idobj.sb+self.idobj.se)/2.0, self.idobj.se],
+                          bpm_s, orbx, orby, cor_s, hcor, vcor])
 
                 # Stop previous existing thread.
                 if self.continuelocalbumporbitthread:
@@ -121,14 +132,19 @@ class IdLocalBump():
                 print traceback.format_exc()
                 print "Get a type error in monitor device selection"
 
-    def deviceselectioncallback(self, value):
+    def deviceselectioncallback(self, value, index):
         """Set selected device name when it is changed."""
-        self.selecteddevice = value
-        self._updatelocalbump()
+        if index == 0:
+            self.selecteddevice = value
+            self._updatelocalbump()
+        else:
+            self.sourceposition = value
 
     def monitordeviceselection(self):
         """Start a process to monitor device selection."""
-        return ca.camonitor(self.pvmapping.__deviceselected__, self.deviceselectioncallback)
+        return ca.camonitor([self.pvmapping.__deviceselected__,
+                             self.pvmapping.__srcposition__],
+                            self.deviceselectioncallback)
 
     def sourcecallback(self, value):
         """Set source s position when it is changed."""
@@ -181,7 +197,7 @@ class IdLocalBump():
             p0 = bpm0.y
             p1 = bpm1.y
         angle = (p1 - p0)/(bpm1.se - bpm0.se)
-        position = angle * (self.idobj.se-self.idobj.sb)/2.0 + p0
+        position = angle * (self.idobj.sb+self.sourceposition-self.bpm0.se) + p0
         return angle, position
 
     def _monitororbit(self):
@@ -283,13 +299,22 @@ class IdLocalBump():
                 self.previoush = [0.0] * self.corscount
             for i, cor in enumerate(self.cors):
                 self.previoush[i] = cor.get("x", unitsys=None, handle="setpoint")
-            delta = ap.setIdBump(ename, bumpsettings[0], bumpsettings[2], plane="x")
+
+            delta = ap.setIdBump(ename,
+                                 ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * bumpsettings[2] +
+                                 bumpsettings[0],
+
+                                 bumpsettings[2], plane="x")
         elif plane == 1:
             if self.previousv is None:
                 self.previousv = [0.0] * self.corscount
             for i, cor in enumerate(self.cors):
                 self.previousv[i] = cor.get("y", unitsys=None, handle="setpoint")
-            delta = ap.setIdBump(ename, bumpsettings[1], bumpsettings[3], plane="y")
+            delta = ap.setIdBump(ename,
+                                 ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * bumpsettings[2] +
+                                 bumpsettings[1],
+
+                                 bumpsettings[3], plane="y")
 
         return delta
 

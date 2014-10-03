@@ -26,3 +26,4 @@ class PvMapping(object):
         self.__apply__ = "SR-DMS4AP{LOCALBUMP}Enbl-Cmd"
         self.__status__ = "SR-DMS4AP{LOCALBUMP}TS-I"
         self.__idposinfo__ = "SR-DMS4AP{LOCALBUMP}S-I"
+        self.__srcposition__ = "SR-DMS4AP{LOCALBUMP}SRC-SP"

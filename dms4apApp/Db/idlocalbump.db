@@ -119,3 +119,10 @@ record(waveform, "SR-DMS4AP{LOCALBUMP}TS-I"){
     field(FTVL, "CHAR")
     field(NELM, "256")
 }
+record(ao, "SR-DMS4AP{LOCALBUMP}SRC-SP"){
+    field(VAL, 0)
+    field(DRVL, "0.0")
+    field(DRVH, "0.0")
+    field(EGU, "m")
+    field(PREC, 3)
+}

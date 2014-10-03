@@ -5,7 +5,7 @@
     <include_parent_macros>true</include_parent_macros>
   </macros>
   <wuid>2bc26383:14606d18884:-7f9e</wuid>
-  <boy_version>3.2.10.201404281417</boy_version>
+  <boy_version>3.2.10.201405291057</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
   <height>760</height>
@@ -68,7 +68,7 @@
     <enabled>true</enabled>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>1280</width>
     <line_style>0</line_style>
@@ -112,7 +112,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <text>NSLS II Storage Ring Insertion Device Local Bump</text>
     <font>
-      <opifont.name fontName="Cantarell" height="15" style="1">Header 2</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="17" style="1">Header 2</opifont.name>
     </font>
     <width>1280</width>
     <border_style>0</border_style>
@@ -161,7 +161,7 @@ $(pv_value)</tooltip>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <precision>0</precision>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>1219</width>
     <border_style>13</border_style>
@@ -184,7 +184,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <wuid>-6a09a26f:14889935bef:-7f0a</wuid>
     <scripts />
-    <height>53</height>
+    <height>58</height>
     <name>Target ID</name>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <scale_options>
@@ -203,7 +203,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>167</width>
     <border_style>13</border_style>
@@ -223,6 +223,7 @@ $(pv_value)</tooltip>
       <s>DW100G1C28D</s>
       <s>EPU49G1C23U</s>
       <s>EPU49G1C23D</s>
+      <s>B1G3C22A</s>
     </items>
     <border_width>1</border_width>
     <border_color>
@@ -259,7 +260,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>216</width>
     <border_style>13</border_style>
@@ -305,7 +306,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>163</width>
     <border_style>13</border_style>
@@ -316,9 +317,9 @@ $(pv_value)</tooltip>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <y>54</y>
+    <y>55</y>
     <actions hook="false" hook_all="false" />
-    <x>738</x>
+    <x>792</x>
     <tooltip></tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
@@ -344,7 +345,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>X</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>42</width>
       <border_style>0</border_style>
@@ -384,7 +385,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Y</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>42</width>
       <border_style>0</border_style>
@@ -416,7 +417,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>93</width>
       <border_style>3</border_style>
@@ -472,7 +473,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>93</width>
       <border_style>3</border_style>
@@ -538,7 +539,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>157</width>
     <border_style>13</border_style>
@@ -549,9 +550,9 @@ $(pv_value)</tooltip>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <y>54</y>
+    <y>55</y>
     <actions hook="false" hook_all="false" />
-    <x>570</x>
+    <x>624</x>
     <tooltip></tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
@@ -577,7 +578,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>X</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>40</width>
       <border_style>0</border_style>
@@ -617,7 +618,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Y</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>40</width>
       <border_style>0</border_style>
@@ -649,7 +650,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>90</width>
       <border_style>3</border_style>
@@ -705,7 +706,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>90</width>
       <border_style>3</border_style>
@@ -852,7 +853,7 @@ $(pv_value)</tooltip>
     <trace_3_update_mode>0</trace_3_update_mode>
     <axis_0_maximum>1000.0</axis_0_maximum>
     <axis_0_scale_font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </axis_0_scale_font>
     <trace_2_point_size>12</trace_2_point_size>
     <trace_4_y_axis_index>3</trace_4_y_axis_index>
@@ -956,7 +957,7 @@ $(trace_0_y_pv_value)</tooltip>
     <trace_0_y_axis_index>1</trace_0_y_axis_index>
     <trace_3_visible>true</trace_3_visible>
     <axis_1_scale_font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </axis_1_scale_font>
     <border_style>13</border_style>
     <trace_3_x_axis_index>0</trace_3_x_axis_index>
@@ -965,7 +966,7 @@ $(trace_0_y_pv_value)</tooltip>
     </plot_area_background_color>
     <trace_2_concatenate_data>false</trace_2_concatenate_data>
     <axis_3_scale_font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </axis_3_scale_font>
     <trace_2_point_style>8</trace_2_point_style>
     <axis_3_y_axis>true</axis_3_y_axis>
@@ -983,7 +984,7 @@ $(trace_0_y_pv_value)</tooltip>
     <trace_0_visible>true</trace_0_visible>
     <trace_6_line_width>8</trace_6_line_width>
     <axis_2_scale_font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </axis_2_scale_font>
     <axis_2_scale_format></axis_2_scale_format>
     <axis_0_minimum>0.0</axis_0_minimum>
@@ -1121,7 +1122,7 @@ $(trace_0_y_pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>130</width>
     <border_style>13</border_style>
@@ -1132,9 +1133,9 @@ $(trace_0_y_pv_value)</tooltip>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <y>54</y>
+    <y>55</y>
     <actions hook="false" hook_all="false" />
-    <x>942</x>
+    <x>972</x>
     <tooltip></tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
       <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1172,7 +1173,7 @@ $(trace_0_y_pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>97</width>
       <border_style>0</border_style>
@@ -1222,7 +1223,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>130</width>
     <border_style>13</border_style>
@@ -1273,7 +1274,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>97</width>
       <border_style>0</border_style>
@@ -1323,7 +1324,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </font>
     <width>178</width>
     <border_style>13</border_style>
@@ -1362,7 +1363,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Position</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>58</width>
       <border_style>0</border_style>
@@ -1402,7 +1403,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Angle</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>46</width>
       <border_style>0</border_style>
@@ -1451,7 +1452,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>94</width>
       <border_style>0</border_style>
@@ -1502,7 +1503,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
       </font>
       <width>94</width>
       <border_style>0</border_style>
@@ -1519,6 +1520,199 @@ $(pv_value)</tooltip>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>57</x>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.choiceButton" version="1.0.0">
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <visible>true</visible>
+    <wuid>-4efcab8e:148d73c75a4:-7fdd</wuid>
+    <scripts />
+    <height>60</height>
+    <name>Src Position</name>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <pv_name>SR-DMS4AP{LOCALBUMP}SRC-SP</pv_name>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <widget_type>Choice Button</widget_type>
+    <enabled>true</enabled>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+    </font>
+    <width>216</width>
+    <border_style>13</border_style>
+    <selected_color>
+      <color red="255" green="255" blue="255" />
+    </selected_color>
+    <rules />
+    <pv_value />
+    <border_width>1</border_width>
+    <horizontal>true</horizontal>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <items_from_pv>true</items_from_pv>
+    <actions hook="false" hook_all="false" />
+    <y>474</y>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <x>1061</x>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>-4efcab8e:148d73c75a4:-7fb6</wuid>
+    <scripts />
+    <height>68</height>
+    <name>Source Position    (Max)</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <enabled>true</enabled>
+    <widget_type>Grouping Container</widget_type>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+    </font>
+    <width>226</width>
+    <border_style>13</border_style>
+    <rules />
+    <fc>false</fc>
+    <lock_children>true</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <y>61</y>
+    <actions hook="false" hook_all="false" />
+    <x>389</x>
+    <tooltip></tooltip>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <multiline_input>false</multiline_input>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>35</height>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <precision_from_pv>true</precision_from_pv>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <enabled>true</enabled>
+      <widget_type>Text Input</widget_type>
+      <text></text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>100</width>
+      <border_style>3</border_style>
+      <pv_value />
+      <maximum>Infinity</maximum>
+      <border_width>1</border_width>
+      <minimum>-Infinity</minimum>
+      <show_units>true</show_units>
+      <wuid>-4efcab8e:148d73c75a4:-7fbc</wuid>
+      <rotation_angle>0.0</rotation_angle>
+      <style>0</style>
+      <name>Text Input</name>
+      <format_type>0</format_type>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <selector_type>0</selector_type>
+      <transparent>false</transparent>
+      <pv_name>SR-DMS4AP{LOCALBUMP}SRC-SP</pv_name>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <precision>0</precision>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <confirm_message></confirm_message>
+      <rules />
+      <limits_from_pv>false</limits_from_pv>
+      <horizontal_alignment>0</horizontal_alignment>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <y>0</y>
+      <actions hook="false" hook_all="false" />
+      <x>0</x>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>false</show_units>
+      <wuid>-4efcab8e:148d73c75a4:-7fb8</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>30</height>
+      <name>Text Update</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>false</transparent>
+      <pv_name>SR-DMS4AP{LOCALBUMP}SRC-SP.DRVH</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text>######</text>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>82</width>
+      <border_style>0</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>2</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>111</x>
     </widget>
   </widget>
 </display>
