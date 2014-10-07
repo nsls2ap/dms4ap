@@ -197,7 +197,7 @@ class IdLocalBump():
             p0 = bpm0.y
             p1 = bpm1.y
         angle = (p1 - p0)/(bpm1.se - bpm0.se)
-        position = angle * (self.idobj.sb+self.sourceposition-self.bpm0.se) + p0
+        position = angle * (self.idobj.sb+self.sourceposition-bpm0.se) + p0
         return angle, position
 
     def _monitororbit(self):
