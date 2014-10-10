@@ -71,14 +71,25 @@ class IdLocalBump():
                          [0.0, 0.0])
             except ca.ca_nothing:
                 print traceback.print_exc()
+            try:
+                ca.caput(self.pvmapping.__status__, "No device selected",
+                         datatype=DBR_CHAR_STR)
+            except ca.ca_nothing:
+                print "Cound not set status pv."
+                return
         else:
             try:
-                bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts / 2)
-                cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount / 2)
                 self.idobj = ap.getElements(self.selecteddevice.lower())[0]
+                allbpms = ap.getGroupMembers(["BPM", "UBPM"], op="union")
+                leftbpms = [b for b in allbpms if b.se < self.idobj.sb]
+                rightbpms = [b for b in allbpms if b.sb >self.idobj.se]
+                bpms = leftbpms[-self.bpmcounts / 2:] + rightbpms [:self.bpmcounts / 2 ]
+                #bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts / 2)
+                cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount / 2)
 
                 try:
-                    assert len(bpms) == self.bpmcounts + 1
+                    #assert len(bpms) == self.bpmcounts + 1
+                    assert len(bpms) == self.bpmcounts
                     assert len(cors) == self.corscount + 1
                 except AssertionError:
                     print "wrong devices"
@@ -88,7 +99,7 @@ class IdLocalBump():
                 orby = []
                 bpm_s = []
                 # delete the element in the middle, which is the insertion device itself
-                bpms.pop(self.bpmcounts / 2)
+                #bpms.pop(self.bpmcounts / 2)
                 self.bpms = bpms[:]
 
                 for bpm in self.bpms:
@@ -207,17 +218,17 @@ class IdLocalBump():
         hcor = [0.0] * self.corscount
         vcor = [0.0] * self.corscount
 
+        msg = "Local bump for %s"%self.selecteddevice
+        if self.bpms is None or self.cors is None or self.idobj is None:
+            msg = "No Device selected."
+        try:
+            ca.caput(self.pvmapping.__status__, msg,
+                     datatype=DBR_CHAR_STR)
+        except ca.ca_nothing:
+            print "Cound not set status pv."
+            return
         while self.continuelocalbumporbitthread:
             # ValueError: setting an array element with a sequence.
-            msg = "Local bump for %s"%self.selecteddevice
-            if self.bpms is None or self.cors is None or self.idobj is None:
-                msg = "No Device selected."
-            try:
-                ca.caput(self.pvmapping.__status__, msg,
-                         datatype=DBR_CHAR_STR)
-            except ca.ca_nothing:
-                print "Cound not set status pv."
-                return
             if self.bpms is None or self.cors is None or self.idobj is None:
                 return
                 
@@ -300,21 +311,23 @@ class IdLocalBump():
             for i, cor in enumerate(self.cors):
                 self.previoush[i] = cor.get("x", unitsys=None, handle="setpoint")
 
-            delta = ap.setIdBump(ename,
+            ap.setIdBump(ename,
                                  ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * bumpsettings[2] +
                                  bumpsettings[0],
 
                                  bumpsettings[2], plane="x")
+            delta = ap.fget(self.cors, 'x', unitsys=None, handle="setpoint") - np.array(self.previoush, 'd')
         elif plane == 1:
             if self.previousv is None:
                 self.previousv = [0.0] * self.corscount
             for i, cor in enumerate(self.cors):
                 self.previousv[i] = cor.get("y", unitsys=None, handle="setpoint")
-            delta = ap.setIdBump(ename,
+            ap.setIdBump(ename,
                                  ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * bumpsettings[2] +
                                  bumpsettings[1],
 
                                  bumpsettings[3], plane="y")
+            delta = ap.fget(self.cors, 'y', unitsys=None, handle="setpoint") - np.array(self.previoush, 'd')
 
         return delta
 
