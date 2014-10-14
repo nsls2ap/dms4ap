@@ -357,8 +357,8 @@ class IdLocalBump():
             except ca.ca_nothing:
                 print "Cannot reset applying pvs after finished."
             # to stop local bump orbit thread monitor thread
-            self.continuelocalbumporbitthread = False
-            self.localbumporbitthread.Wait()
+            #self.continuelocalbumporbitthread = False
+            #self.localbumporbitthread.Wait()
 
     def monitorapply(self):
         """Monitor the PV to trig setting data to IOC."""
