@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+    <TITLE>Local Bump Information</TITLE>
+    <MAIN>/boy/SR-OP/</MAIN>
+  </macros>
+  <wuid>-3376861e:143d5b773b9:-5c64</wuid>
+  <boy_version>3.2.10.201405291057</boy_version>
+  <scripts />
+  <show_ruler>true</show_ruler>
+  <height>800</height>
+  <name>$(TITLE)</name>
+  <snap_to_geometry>true</snap_to_geometry>
+  <show_grid>true</show_grid>
+  <background_color>
+    <color red="240" green="240" blue="240" />
+  </background_color>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <widget_type>Display</widget_type>
+  <show_close_button>true</show_close_button>
+  <width>640</width>
+  <rules />
+  <show_edit_range>true</show_edit_range>
+  <grid_space>6</grid_space>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <actions hook="false" hook_all="false" />
+  <y>-1</y>
+  <x>-1</x>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>-3376861e:143d5b773b9:-5c61</wuid>
+    <auto_size>true</auto_size>
+    <scripts />
+    <zoom_to_fit>true</zoom_to_fit>
+    <height>35</height>
+    <name>Linking Container</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <opi_file>../common/title.opi</opi_file>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <group_name>op-title-600</group_name>
+    <enabled>true</enabled>
+    <widget_type>Linking Container</widget_type>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+    </font>
+    <width>602</width>
+    <border_style>3</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <y>0</y>
+    <actions hook="false" hook_all="false" />
+    <x>0</x>
+    <tooltip></tooltip>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <wuid>15d50e3f:14497cd5333:91e</wuid>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>457</height>
+    <name>About</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>true</transparent>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <widget_type>Label</widget_type>
+    <enabled>true</enabled>
+    <text>This application is to create a local bump around predefined devices, which
+can be either an insertion device, or a bending magnet.
+
+Here is the steps how to use it:
+1. Choose a device from pull down menu;
+2. Choose Plane;
+3. Specify the offset and angle. 
+    - Default is at the center position of selected device;
+    - units are mm and mrad for offset and angle respectively;
+4. "Apply"
+
+Each apply will run 10 small steps. It is safe to apply multiple times. 
+The code will stop whenever no improvement is possible.
+
+A "UNDO" is provided, and could be done once for each plane (X/Y).
+
+Note: 
+The orbit are relative to BBA and golden orbit (if set by anyone)
+This CSS panel is using 12 correctors in total to set the local bump. 
+Still, It may not be strong enough to create very large horizontal bump. 
+In this case, is is suggested to use APHLA script to specify more correctors 
+and constraint more tightly around the edge of the bumped orbit.</text>
+    <font>
+      <fontdata fontName="Lucida Grande" height="14" style="0" />
+    </font>
+    <width>590</width>
+    <border_style>13</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <horizontal_alignment>0</horizontal_alignment>
+    <actions hook="false" hook_all="false" />
+    <y>60</y>
+    <wrap_words>false</wrap_words>
+    <tooltip></tooltip>
+    <x>12</x>
+  </widget>
+</display>
