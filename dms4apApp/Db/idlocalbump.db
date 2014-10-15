@@ -60,16 +60,16 @@ record(mbbo, "SR-DMS4AP{LOCALBUMP}PLANE-SP"){
 record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:X-SP"){
     field(DESC, "X plane shift at source point")
     field(VAL, 0.0)
-    field(DRVH, "0.5")
-    field(DRVL, "-0.5")
+    #field(DRVH, "0.5")
+    #field(DRVL, "-0.5")
     field(EGU, "mm")
     field(PREC, "5")
 }
 record(ao, "SR-DMS4AP{LOCALBUMP}SHIFT:Y-SP"){
     field(DESC, "Y plane shift at source point")
     field(VAL, 0.0)
-    field(DRVH, "0.5")
-    field(DRVL, "-0.5")
+    #field(DRVH, "0.5")
+    #field(DRVL, "-0.5")
     field(EGU, "mm")
     field(PREC, "5")
 }
@@ -88,16 +88,16 @@ record(ai, "SR-DMS4AP{LOCALBUMP}POS-I"){
 record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:X-SP"){
     field(DESC, "X plane angle at source point")
     field(VAL, 0.0)
-    field(DRVH, "0.25")
-    field(DRVL, "-0.25")
+    #field(DRVH, "0.25")
+    #field(DRVL, "-0.25")
     field(EGU, "mrad")
     field(PREC, "5")
 }
 record(ao, "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"){
     field(DESC, "Y plane angle at source point")
     field(VAL, 0.0)
-    field(DRVH, "0.25")
-    field(DRVL, "-0.25")
+    #field(DRVH, "0.25")
+    #field(DRVL, "-0.25")
     field(EGU, "mrad")
     field(PREC, "5")
 }

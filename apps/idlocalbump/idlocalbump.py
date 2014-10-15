@@ -310,24 +310,29 @@ class IdLocalBump():
 
         if plane == 0:
             fld = 'x'
+            xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
+                bumpsettings[2] + bumpsettings[0]
+            thetac = bumpsettings[2]
         elif plane == 1:
             fld = 'y'
+            xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
+                bumpsettings[3] + bumpsettings[1]
+            thetac = bumpsettings[3]
 
         if self.previoush is None:
             self.previoush = [0.0] * self.corscount
         for i, cor in enumerate(self.cors):
             self.previoush[i] = cor.get(fld, unitsys=None, handle="setpoint")
 
-        xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
-            bumpsettings[2] + bumpsettings[0]
-        for i in range(10):
+        niter = 10
+        for i in range(niter):
             norm0, norm1, norm2, corvals = \
-                ap.setIdBump(ename, xc, bumpsettings[2], plane=fld)
+                ap.setIdBump(ename, xc, thetac, plane=fld)
             if corvals is None:
-                msg = "Minimum chi^2 achieved: {0} (predicted: {1})".format(norm0, norm1)
+                msg = "{0}/{1} Minimum chi^2 achieved: {2} (predicted: {3})".format(i,niter,norm0, norm1)
             else:
-                msg = "chi^2 decreased {0} from {1} (predicted: {2})".format(
-                    norm2-norm0, norm0, norm1)
+                msg = "{0}/{1} chi^2 decreased {2} from {3} (predicted: {4})".format(
+                    i, niter, norm2-norm0, norm0, norm1)
             ca.caput(self.pvmapping.__status__, msg[:255], datatype=DBR_CHAR_STR)
 
         delta = ap.fget(self.cors, fld, unitsys=None, handle="setpoint") - np.array(self.previoush, 'd')
@@ -393,6 +398,7 @@ if __name__ == "__main__":
     idlocalbump.monitorplane()
     idlocalbump.monitorundo()
     idlocalbump.monitorapply()
+    idlocalbump.monitorbumpsettings()
 
     idlocalbump.startshell()
     idlocalbump.stopmonitor()
