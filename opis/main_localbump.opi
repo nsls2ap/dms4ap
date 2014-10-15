@@ -918,42 +918,6 @@ $(trace_0_y_pv_value)</tooltip>
         </exp>
         <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
       </rule>
-      <rule name="trace_2_visible" prop_id="trace_2_visible" out_exp="false">
-        <exp bool_exp="pv0 == 0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="pv0 == 1">
-          <value>false</value>
-        </exp>
-        <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
-      </rule>
-      <rule name="trace_3_visible" prop_id="trace_3_visible" out_exp="false">
-        <exp bool_exp="pv0 == 0">
-          <value>false</value>
-        </exp>
-        <exp bool_exp="pv0 == 1">
-          <value>true</value>
-        </exp>
-        <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
-      </rule>
-      <rule name="trace_4_visible" prop_id="trace_4_visible" out_exp="false">
-        <exp bool_exp="pv0 == 0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="pv0 == 1">
-          <value>false</value>
-        </exp>
-        <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
-      </rule>
-      <rule name="trace_5_visible" prop_id="trace_5_visible" out_exp="false">
-        <exp bool_exp="pv0 == 0">
-          <value>false</value>
-        </exp>
-        <exp bool_exp="pv0 == 1">
-          <value>true</value>
-        </exp>
-        <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
-      </rule>
     </rules>
     <trace_2_y_pv>=('SR-DMS4AP{LOCALBUMP}S-I'-'SR-DMS4AP{LOCALBUMP}S-I')</trace_2_y_pv>
     <trace_0_y_pv_value />
