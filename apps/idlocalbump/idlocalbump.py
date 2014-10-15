@@ -200,7 +200,8 @@ class IdLocalBump():
             print "Cannot clean devices for local bump"
 
     def _getliveangleandpos(self, bpm0, bpm1):
-        """"""
+        """
+        """
         if self.plane == 0:
             p0 = bpm0.x
             p1 = bpm1.x
@@ -212,7 +213,8 @@ class IdLocalBump():
         return angle, position
 
     def _monitororbit(self):
-        """"""
+        """
+        """
         orbx = [0.0] * self.bpmcounts
         orby = [0.0] * self.bpmcounts
         hcor = [0.0] * self.corscount
@@ -265,7 +267,8 @@ class IdLocalBump():
             cothread.Sleep(1.0)
 
     def undocallback(self, value):
-        """"""
+        """
+        """
         if value == 1:
             try:
                 if self.plane == 0:
@@ -306,29 +309,28 @@ class IdLocalBump():
         """
 
         if plane == 0:
-            if self.previoush is None:
-                self.previoush = [0.0] * self.corscount
-            for i, cor in enumerate(self.cors):
-                self.previoush[i] = cor.get("x", unitsys=None, handle="setpoint")
-
-            ap.setIdBump(ename,
-                                 ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * bumpsettings[2] +
-                                 bumpsettings[0],
-
-                                 bumpsettings[2], plane="x")
-            delta = ap.fget(self.cors, 'x', unitsys=None, handle="setpoint") - np.array(self.previoush, 'd')
+            fld = 'x'
         elif plane == 1:
-            if self.previousv is None:
-                self.previousv = [0.0] * self.corscount
-            for i, cor in enumerate(self.cors):
-                self.previousv[i] = cor.get("y", unitsys=None, handle="setpoint")
-            ap.setIdBump(ename,
-                                 ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * bumpsettings[2] +
-                                 bumpsettings[1],
+            fld = 'y'
 
-                                 bumpsettings[3], plane="y")
-            delta = ap.fget(self.cors, 'y', unitsys=None, handle="setpoint") - np.array(self.previoush, 'd')
+        if self.previoush is None:
+            self.previoush = [0.0] * self.corscount
+        for i, cor in enumerate(self.cors):
+            self.previoush[i] = cor.get(fld, unitsys=None, handle="setpoint")
 
+        xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
+            bumpsettings[2] + bumpsettings[0]
+        for i in range(10):
+            norm0, norm1, norm2, corvals = \
+                ap.setIdBump(ename, xc, bumpsettings[2], plane=fld)
+            if corvals is None:
+                msg = "Minimum chi^2 achieved: {0} (predicted: {1})".format(norm0, norm1)
+            else:
+                msg = "chi^2 decreased {0} from {1} (predicted: {2})".format(
+                    norm2-norm0, norm0, norm1)
+            ca.caput(self.pvmapping.__status__, msg[:255], datatype=DBR_CHAR_STR)
+
+        delta = ap.fget(self.cors, fld, unitsys=None, handle="setpoint") - np.array(self.previoush, 'd')
         return delta
 
     def applycallback(self, value):
