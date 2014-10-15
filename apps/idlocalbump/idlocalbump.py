@@ -326,6 +326,7 @@ class IdLocalBump():
 
         niter = 10
         for i in range(niter):
+            cothread.Yield(0.10)
             norm0, norm1, norm2, corvals = \
                 ap.setIdBump(ename, xc, thetac, plane=fld)
             if corvals is None:
