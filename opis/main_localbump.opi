@@ -749,92 +749,58 @@ $(pv_value)</tooltip>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.xyGraph" version="1.0.0">
     <trace_1_visible>true</trace_1_visible>
-    <trace_6_update_delay>100</trace_6_update_delay>
     <trace_1_trace_type>0</trace_1_trace_type>
-    <trace_4_point_style>8</trace_4_point_style>
-    <axis_3_dash_grid_line>false</axis_3_dash_grid_line>
     <trace_0_trace_color>
       <color red="21" green="21" blue="196" />
     </trace_0_trace_color>
     <axis_0_auto_scale>true</axis_0_auto_scale>
-    <trace_3_trace_type>2</trace_3_trace_type>
-    <axis_3_minimum>0.0</axis_3_minimum>
-    <trace_4_update_delay>100</trace_4_update_delay>
     <axis_1_time_format>0</axis_1_time_format>
     <trace_1_point_size>12</trace_1_point_size>
     <trace_0_plot_mode>0</trace_0_plot_mode>
-    <trace_count>7</trace_count>
-    <trace_4_concatenate_data>false</trace_4_concatenate_data>
+    <trace_count>3</trace_count>
     <trace_2_y_pv_value />
     <axis_0_show_grid>true</axis_0_show_grid>
-    <axis_2_log_scale>false</axis_2_log_scale>
     <axis_0_log_scale>false</axis_0_log_scale>
-    <trace_3_point_size>12</trace_3_point_size>
-    <trace_6_trace_type>0</trace_6_trace_type>
-    <trace_3_y_axis_index>2</trace_3_y_axis_index>
     <trace_1_name>Local Orbit (Y)</trace_1_name>
-    <axis_2_grid_color>
-      <color red="200" green="200" blue="200" />
-    </axis_2_grid_color>
-    <axis_2_minimum>0.0</axis_2_minimum>
-    <trace_4_line_width>1</trace_4_line_width>
     <trace_0_point_size>12</trace_0_point_size>
-    <axis_3_show_grid>false</axis_3_show_grid>
     <show_legend>true</show_legend>
     <y>135</y>
-    <trace_5_update_mode>0</trace_5_update_mode>
     <x>18</x>
-    <axis_3_axis_color>
-      <color red="33" green="179" blue="33" />
-    </axis_3_axis_color>
     <visible>true</visible>
     <trace_0_x_pv_value />
     <axis_1_visible>true</axis_1_visible>
     <height>487</height>
     <axis_1_maximum>100.0</axis_1_maximum>
-    <trace_3_x_pv_value />
-    <trace_4_x_pv>SR-DMS4AP{LOCALBUMP:COR}Pos-I</trace_4_x_pv>
-    <trace_2_x_pv>SR-DMS4AP{LOCALBUMP:COR}Pos-I</trace_2_x_pv>
+    <trace_2_x_pv>SR-DMS4AP{LOCALBUMP}S-I</trace_2_x_pv>
     <axis_1_title_font>
       <fontdata fontName="Arial" height="9" style="1" />
     </axis_1_title_font>
     <border_width>1</border_width>
-    <axis_2_left_bottom_side>true</axis_2_left_bottom_side>
     <trace_2_x_axis_index>0</trace_2_x_axis_index>
-    <axis_2_show_grid>false</axis_2_show_grid>
-    <trace_3_name>Corrector (V)</trace_3_name>
     <axis_0_axis_color>
       <color red="0" green="0" blue="0" />
     </axis_0_axis_color>
     <axis_1_scale_format></axis_1_scale_format>
     <name>Local Bump</name>
     <axis_1_auto_scale_threshold>0.0</axis_1_auto_scale_threshold>
-    <trace_4_buffer_size>100</trace_4_buffer_size>
     <trace_0_line_width>2</trace_0_line_width>
     <trace_2_x_pv_value />
-    <axis_3_auto_scale>true</axis_3_auto_scale>
     <show_toolbar>false</show_toolbar>
     <trace_1_update_delay>100</trace_1_update_delay>
-    <trace_4_x_axis_index>0</trace_4_x_axis_index>
     <axis_1_show_grid>true</axis_1_show_grid>
     <axis_0_grid_color>
       <color red="200" green="200" blue="200" />
     </axis_0_grid_color>
-    <trace_5_plot_mode>0</trace_5_plot_mode>
-    <trace_2_line_width>1</trace_2_line_width>
+    <trace_2_line_width>8</trace_2_line_width>
     <trace_1_line_width>2</trace_1_line_width>
-    <trace_2_y_axis_index>2</trace_2_y_axis_index>
+    <trace_2_y_axis_index>1</trace_2_y_axis_index>
     <axis_0_auto_scale_threshold>0.0</axis_0_auto_scale_threshold>
-    <trace_2_trace_type>2</trace_2_trace_type>
+    <trace_2_trace_type>0</trace_2_trace_type>
     <trace_0_name>Local Orbit (X)</trace_0_name>
     <trace_1_anti_alias>true</trace_1_anti_alias>
-    <axis_3_auto_scale_threshold>0.0</axis_3_auto_scale_threshold>
-    <trace_3_x_pv>SR-DMS4AP{LOCALBUMP:COR}Pos-I</trace_3_x_pv>
-    <axis_2_maximum>100.0</axis_2_maximum>
     <trace_0_update_mode>0</trace_0_update_mode>
     <trace_1_buffer_size>100</trace_1_buffer_size>
     <axis_0_axis_title>Primary X Axis (0)</axis_0_axis_title>
-    <trace_3_line_width>1</trace_3_line_width>
     <wuid>-21c4c36f:148a29432ce:-7fe7</wuid>
     <trace_2_buffer_size>100</trace_2_buffer_size>
     <axis_1_axis_color>
@@ -847,191 +813,92 @@ $(pv_value)</tooltip>
     <trace_1_update_mode>0</trace_1_update_mode>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <axis_1_axis_title>Local Orbit (X/Y)</axis_1_axis_title>
-    <trace_4_anti_alias>true</trace_4_anti_alias>
-    <trace_4_plot_mode>0</trace_4_plot_mode>
-    <axis_2_y_axis>true</axis_2_y_axis>
-    <trace_3_update_mode>0</trace_3_update_mode>
     <axis_0_maximum>1000.0</axis_0_maximum>
     <axis_0_scale_font>
       <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </axis_0_scale_font>
     <trace_2_point_size>12</trace_2_point_size>
-    <trace_4_y_axis_index>3</trace_4_y_axis_index>
-    <trace_6_plot_mode>0</trace_6_plot_mode>
     <trace_1_y_pv_value />
     <axis_0_time_format>0</axis_0_time_format>
-    <trace_4_update_mode>0</trace_4_update_mode>
-    <trace_3_concatenate_data>false</trace_3_concatenate_data>
-    <trace_3_trace_color>
-      <color red="242" green="26" blue="26" />
-    </trace_3_trace_color>
     <trace_1_plot_mode>0</trace_1_plot_mode>
-    <trace_5_name>Corrector (Delta V)</trace_5_name>
-    <trace_6_point_style>0</trace_6_point_style>
     <axis_1_log_scale>false</axis_1_log_scale>
     <trace_1_point_style>4</trace_1_point_style>
-    <trace_5_x_pv>SR-DMS4AP{LOCALBUMP:COR}Pos-I</trace_5_x_pv>
-    <axis_2_auto_scale_threshold>0.0</axis_2_auto_scale_threshold>
-    <trace_5_point_style>4</trace_5_point_style>
-    <axis_3_maximum>100.0</axis_3_maximum>
     <trace_2_plot_mode>0</trace_2_plot_mode>
     <title_font>
       <fontdata fontName="Arial" height="12" style="1" />
     </title_font>
-    <trace_6_y_pv>=('SR-DMS4AP{LOCALBUMP}S-I'-'SR-DMS4AP{LOCALBUMP}S-I')</trace_6_y_pv>
-    <trace_3_buffer_size>100</trace_3_buffer_size>
     <axis_1_dash_grid_line>true</axis_1_dash_grid_line>
-    <axis_2_dash_grid_line>false</axis_2_dash_grid_line>
     <axis_0_visible>true</axis_0_visible>
-    <trace_6_point_size>4</trace_6_point_size>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <trace_1_x_pv_value />
-    <trace_6_concatenate_data>false</trace_6_concatenate_data>
     <axis_0_scale_format></axis_0_scale_format>
-    <trace_4_name>Corrector (Delta H)</trace_4_name>
-    <trace_6_visible>true</trace_6_visible>
-    <trace_4_trace_type>2</trace_4_trace_type>
     <trace_0_x_pv>SR-DMS4AP{LOCALBUMP:BPM}Pos-I</trace_0_x_pv>
     <trace_0_y_pv>SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I</trace_0_y_pv>
-    <axis_3_visible>true</axis_3_visible>
-    <trace_5_point_size>12</trace_5_point_size>
-    <trace_6_x_pv_value />
-    <trace_6_update_mode>0</trace_6_update_mode>
     <axis_0_title_font>
       <fontdata fontName="Arial" height="9" style="1" />
     </axis_0_title_font>
-    <trace_5_buffer_size>100</trace_5_buffer_size>
-    <trace_3_point_style>4</trace_3_point_style>
     <axis_1_auto_scale>true</axis_1_auto_scale>
     <trace_2_update_delay>100</trace_2_update_delay>
-    <trace_4_point_size>12</trace_4_point_size>
     <trace_0_concatenate_data>false</trace_0_concatenate_data>
-    <trace_5_y_axis_index>3</trace_5_y_axis_index>
-    <trace_3_y_pv>SR-DMS4AP{LOCALBUMP:VCOR}PS-SP</trace_3_y_pv>
     <actions hook="false" hook_all="false" />
     <trigger_pv_value />
     <trace_1_x_pv>SR-DMS4AP{LOCALBUMP:BPM}Pos-I</trace_1_x_pv>
     <show_plot_area_border>false</show_plot_area_border>
-    <trace_4_trace_color>
-      <color red="33" green="179" blue="33" />
-    </trace_4_trace_color>
-    <axis_2_axis_title>Corrector (H/V)</axis_2_axis_title>
     <widget_type>XY Graph</widget_type>
     <enabled>true</enabled>
     <width>1054</width>
-    <axis_3_title_font>
-      <fontdata fontName="Arial" height="9" style="1" />
-    </axis_3_title_font>
     <trace_0_buffer_size>100</trace_0_buffer_size>
     <trigger_pv></trigger_pv>
-    <trace_6_trace_color>
-      <color red="255" green="0" blue="240" />
-    </trace_6_trace_color>
-    <trace_5_trace_type>2</trace_5_trace_type>
-    <axis_3_grid_color>
-      <color red="200" green="200" blue="200" />
-    </axis_3_grid_color>
-    <axis_count>4</axis_count>
-    <trace_2_name>Corrector (H)</trace_2_name>
-    <trace_4_visible>true</trace_4_visible>
-    <trace_5_concatenate_data>false</trace_5_concatenate_data>
+    <axis_count>2</axis_count>
+    <trace_2_name>ID</trace_2_name>
     <transparent>false</transparent>
     <trace_2_anti_alias>true</trace_2_anti_alias>
     <axis_0_dash_grid_line>true</axis_0_dash_grid_line>
     <trace_2_visible>true</trace_2_visible>
-    <trace_5_update_delay>100</trace_5_update_delay>
     <trace_0_x_axis_index>0</trace_0_x_axis_index>
-    <axis_2_time_format>0</axis_2_time_format>
-    <trace_6_y_axis_index>1</trace_6_y_axis_index>
-    <trace_6_y_pv_value />
     <trace_0_point_style>8</trace_0_point_style>
     <tooltip>$(trace_0_y_pv)
 $(trace_0_y_pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <axis_2_title_font>
-      <fontdata fontName="Arial" height="9" style="1" />
-    </axis_2_title_font>
-    <trace_4_y_pv>SR-DMS4AP{LOCALBUMP:HCOR}PS:Delta-SP</trace_4_y_pv>
     <trace_1_x_axis_index>0</trace_1_x_axis_index>
-    <trace_6_name>ID</trace_6_name>
     <trace_0_y_axis_index>1</trace_0_y_axis_index>
-    <trace_3_visible>true</trace_3_visible>
     <axis_1_scale_font>
       <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
     </axis_1_scale_font>
     <border_style>13</border_style>
-    <trace_3_x_axis_index>0</trace_3_x_axis_index>
     <plot_area_background_color>
       <color red="255" green="255" blue="255" />
     </plot_area_background_color>
     <trace_2_concatenate_data>false</trace_2_concatenate_data>
-    <axis_3_scale_font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-    </axis_3_scale_font>
-    <trace_2_point_style>8</trace_2_point_style>
-    <axis_3_y_axis>true</axis_3_y_axis>
+    <trace_2_point_style>0</trace_2_point_style>
     <title></title>
-    <axis_3_axis_title>Delta H/V</axis_3_axis_title>
-    <axis_3_log_scale>false</axis_3_log_scale>
     <trace_1_y_pv>SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I</trace_1_y_pv>
-    <axis_2_auto_scale>true</axis_2_auto_scale>
     <pv_name></pv_name>
     <axis_1_minimum>0.0</axis_1_minimum>
-    <axis_2_axis_color>
-      <color red="242" green="26" blue="26" />
-    </axis_2_axis_color>
-    <trace_3_plot_mode>0</trace_3_plot_mode>
     <trace_0_visible>true</trace_0_visible>
-    <trace_6_line_width>8</trace_6_line_width>
-    <axis_2_scale_font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-    </axis_2_scale_font>
-    <axis_2_scale_format></axis_2_scale_format>
     <axis_0_minimum>0.0</axis_0_minimum>
-    <trace_5_trace_color>
-      <color red="33" green="179" blue="33" />
-    </trace_5_trace_color>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
-    <axis_3_left_bottom_side>false</axis_3_left_bottom_side>
-    <trace_3_update_delay>100</trace_3_update_delay>
     <scripts />
-    <trace_5_visible>true</trace_5_visible>
     <trace_0_anti_alias>true</trace_0_anti_alias>
-    <trace_4_x_pv_value />
-    <axis_3_time_format>0</axis_3_time_format>
-    <trace_6_x_axis_index>0</trace_6_x_axis_index>
     <background_color>
       <color red="240" green="240" blue="240" />
     </background_color>
-    <trace_6_buffer_size>100</trace_6_buffer_size>
     <trace_1_trace_color>
       <color red="21" green="21" blue="196" />
     </trace_1_trace_color>
     <trace_2_trace_color>
       <color red="242" green="26" blue="26" />
     </trace_2_trace_color>
-    <trace_6_anti_alias>true</trace_6_anti_alias>
-    <trace_5_y_pv_value />
     <pv_value />
-    <trace_5_x_pv_value />
-    <trace_5_line_width>1</trace_5_line_width>
-    <trace_4_y_pv_value />
-    <trace_5_y_pv>SR-DMS4AP{LOCALBUMP:VCOR}PS:Delta-SP</trace_5_y_pv>
-    <trace_5_x_axis_index>0</trace_5_x_axis_index>
-    <axis_2_visible>true</axis_2_visible>
     <trace_1_y_axis_index>1</trace_1_y_axis_index>
-    <trace_3_anti_alias>true</trace_3_anti_alias>
-    <trace_5_anti_alias>true</trace_5_anti_alias>
-    <axis_3_scale_format></axis_3_scale_format>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <trace_1_concatenate_data>false</trace_1_concatenate_data>
-    <trace_6_x_pv>SR-DMS4AP{LOCALBUMP}S-I</trace_6_x_pv>
     <rules>
       <rule name="trace_0_visible" prop_id="trace_0_visible" out_exp="false">
         <exp bool_exp="pv0 == 0">
@@ -1088,13 +955,12 @@ $(trace_0_y_pv_value)</tooltip>
         <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
       </rule>
     </rules>
-    <trace_2_y_pv>SR-DMS4AP{LOCALBUMP:HCOR}PS-SP</trace_2_y_pv>
+    <trace_2_y_pv>=('SR-DMS4AP{LOCALBUMP}S-I'-'SR-DMS4AP{LOCALBUMP}S-I')</trace_2_y_pv>
     <trace_0_y_pv_value />
     <trace_0_trace_type>0</trace_0_trace_type>
     <axis_1_grid_color>
       <color red="200" green="200" blue="200" />
     </axis_1_grid_color>
-    <trace_3_y_pv_value />
     <trace_0_update_delay>100</trace_0_update_delay>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -1304,229 +1170,6 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>203bf6ac:148d1a3df26:-7e96</wuid>
-    <scripts />
-    <height>67</height>
-    <name>Live</name>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <transparent>false</transparent>
-    <show_scrollbar>false</show_scrollbar>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <enabled>true</enabled>
-    <widget_type>Grouping Container</widget_type>
-    <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-    </font>
-    <width>178</width>
-    <border_style>13</border_style>
-    <rules />
-    <fc>false</fc>
-    <lock_children>true</lock_children>
-    <border_width>1</border_width>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <y>156</y>
-    <actions hook="false" hook_all="false" />
-    <x>1080</x>
-    <tooltip></tooltip>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <wuid>203bf6ac:148d1a3df26:-7f00</wuid>
-      <auto_size>false</auto_size>
-      <scripts />
-      <height>20</height>
-      <name>Label_5</name>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <transparent>true</transparent>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <foreground_color>
-        <color red="0" green="0" blue="0" />
-      </foreground_color>
-      <widget_type>Label</widget_type>
-      <enabled>true</enabled>
-      <text>Position</text>
-      <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-      </font>
-      <width>58</width>
-      <border_style>0</border_style>
-      <rules />
-      <border_width>1</border_width>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <horizontal_alignment>0</horizontal_alignment>
-      <actions hook="false" hook_all="false" />
-      <y>20</y>
-      <wrap_words>false</wrap_words>
-      <tooltip></tooltip>
-      <x>0</x>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <wuid>203bf6ac:148d1a3df26:-7eff</wuid>
-      <auto_size>false</auto_size>
-      <scripts />
-      <height>20</height>
-      <name>Label_5</name>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <transparent>true</transparent>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <foreground_color>
-        <color red="0" green="0" blue="0" />
-      </foreground_color>
-      <widget_type>Label</widget_type>
-      <enabled>true</enabled>
-      <text>Angle</text>
-      <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-      </font>
-      <width>46</width>
-      <border_style>0</border_style>
-      <rules />
-      <border_width>1</border_width>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <horizontal_alignment>0</horizontal_alignment>
-      <actions hook="false" hook_all="false" />
-      <y>0</y>
-      <wrap_words>false</wrap_words>
-      <tooltip></tooltip>
-      <x>0</x>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <show_units>true</show_units>
-      <wuid>203bf6ac:148d1a3df26:-7efe</wuid>
-      <auto_size>false</auto_size>
-      <rotation_angle>0.0</rotation_angle>
-      <scripts />
-      <height>20</height>
-      <name>Text Update</name>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <format_type>0</format_type>
-      <precision_from_pv>true</precision_from_pv>
-      <transparent>false</transparent>
-      <pv_name>SR-DMS4AP{LOCALBUMP}ANGLE-I</pv_name>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <foreground_color>
-        <color red="0" green="0" blue="0" />
-      </foreground_color>
-      <widget_type>Text Update</widget_type>
-      <enabled>true</enabled>
-      <text>######</text>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <precision>0</precision>
-      <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-      </font>
-      <width>94</width>
-      <border_style>0</border_style>
-      <rules />
-      <pv_value />
-      <border_width>1</border_width>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <actions hook="false" hook_all="false" />
-      <y>0</y>
-      <wrap_words>false</wrap_words>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <x>57</x>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <show_units>true</show_units>
-      <wuid>203bf6ac:148d1a3df26:-7efd</wuid>
-      <auto_size>false</auto_size>
-      <rotation_angle>0.0</rotation_angle>
-      <scripts />
-      <height>20</height>
-      <name>Text Update_1</name>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <format_type>0</format_type>
-      <precision_from_pv>true</precision_from_pv>
-      <transparent>false</transparent>
-      <pv_name>SR-DMS4AP{LOCALBUMP}POS-I</pv_name>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <foreground_color>
-        <color red="0" green="0" blue="0" />
-      </foreground_color>
-      <widget_type>Text Update</widget_type>
-      <enabled>true</enabled>
-      <text>######</text>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <precision>0</precision>
-      <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
-      </font>
-      <width>94</width>
-      <border_style>0</border_style>
-      <rules />
-      <pv_value />
-      <border_width>1</border_width>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <actions hook="false" hook_all="false" />
-      <y>20</y>
-      <wrap_words>false</wrap_words>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <x>57</x>
-    </widget>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <visible>true</visible>
     <wuid>-4efcab8e:148d73c75a4:-7fb6</wuid>
     <scripts />
     <height>68</height>
@@ -1583,9 +1226,9 @@ $(pv_value)</tooltip>
       <width>100</width>
       <border_style>3</border_style>
       <pv_value />
-      <maximum>Infinity</maximum>
+      <maximum>1.7976931348623157E308</maximum>
       <border_width>1</border_width>
-      <minimum>-Infinity</minimum>
+      <minimum>-1.7976931348623157E308</minimum>
       <show_units>true</show_units>
       <wuid>-4efcab8e:148d73c75a4:-7fbc</wuid>
       <rotation_angle>0.0</rotation_angle>
@@ -1668,6 +1311,320 @@ $(pv_value)</tooltip>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <x>111</x>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <wuid>6fabf327:14911d93433:-7eea</wuid>
+    <scripts />
+    <height>101</height>
+    <name>Live</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <enabled>true</enabled>
+    <widget_type>Grouping Container</widget_type>
+    <font>
+      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+    </font>
+    <width>196</width>
+    <border_style>13</border_style>
+    <rules />
+    <fc>false</fc>
+    <lock_children>true</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <y>156</y>
+    <actions hook="false" hook_all="false" />
+    <x>1071</x>
+    <tooltip></tooltip>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>203bf6ac:148d1a3df26:-7f00</wuid>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>20</height>
+      <name>Label_5</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Offset</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>61</width>
+      <border_style>0</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>48</y>
+      <wrap_words>false</wrap_words>
+      <tooltip></tooltip>
+      <x>0</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>203bf6ac:148d1a3df26:-7eff</wuid>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>20</height>
+      <name>Label_5</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>Angle</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>49</width>
+      <border_style>0</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>24</y>
+      <wrap_words>false</wrap_words>
+      <tooltip></tooltip>
+      <x>0</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>true</show_units>
+      <wuid>203bf6ac:148d1a3df26:-7efe</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>20</height>
+      <name>Text Update</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>false</transparent>
+      <pv_name>SR-DMS4AP{LOCALBUMP}ANGLE-I</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text>######</text>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>100</width>
+      <border_style>0</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>24</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>60</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>true</show_units>
+      <wuid>203bf6ac:148d1a3df26:-7efd</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>20</height>
+      <name>Text Update_1</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>false</transparent>
+      <pv_name>SR-DMS4AP{LOCALBUMP}POS-I</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text>######</text>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>100</width>
+      <border_style>0</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>48</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>60</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <wuid>6fabf327:14911d93433:-7fb3</wuid>
+      <auto_size>false</auto_size>
+      <scripts />
+      <height>20</height>
+      <name>Label_7</name>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <transparent>true</transparent>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Label</widget_type>
+      <enabled>true</enabled>
+      <text>S-Pos.</text>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>61</width>
+      <border_style>0</border_style>
+      <rules />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>0</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>0</y>
+      <wrap_words>false</wrap_words>
+      <tooltip></tooltip>
+      <x>0</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <show_units>true</show_units>
+      <wuid>6fabf327:14911d93433:-7fb2</wuid>
+      <auto_size>false</auto_size>
+      <rotation_angle>0.0</rotation_angle>
+      <scripts />
+      <height>20</height>
+      <name>Text Update_2</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <format_type>0</format_type>
+      <precision_from_pv>true</precision_from_pv>
+      <transparent>false</transparent>
+      <pv_name>=elementAt('SR-DMS4AP{LOCALBUMP}S-I', 0) + 'SR-DMS4AP{LOCALBUMP}SRC-SP'</pv_name>
+      <background_color>
+        <color red="255" green="255" blue="255" />
+      </background_color>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <widget_type>Text Update</widget_type>
+      <enabled>true</enabled>
+      <text></text>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <precision>0</precision>
+      <font>
+        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      </font>
+      <width>100</width>
+      <border_style>0</border_style>
+      <rules />
+      <pv_value />
+      <border_width>1</border_width>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions hook="false" hook_all="false" />
+      <y>0</y>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>60</x>
     </widget>
   </widget>
 </display>
