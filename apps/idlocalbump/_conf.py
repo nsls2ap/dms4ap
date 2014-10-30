@@ -1,4 +1,4 @@
-\class PvMapping(object):
+class PvMapping(object):
     def __init__(self):
         """Configuration for PVs used by creating a local bump nearby insertion device.
         """
