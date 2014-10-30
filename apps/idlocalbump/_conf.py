@@ -17,6 +17,8 @@ class PvMapping(object):
         self.__bpmposition__ = "SR-DMS4AP{LOCALBUMP:BPM}Pos-I"
         self.__bpmorbitx__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I"
         self.__bpmorbity__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I"
+        self.__bpmorbitx0__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:X0-I"
+        self.__bpmorbity0__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y0-I"
 
         self.__correctorposition__ = "SR-DMS4AP{LOCALBUMP:COR}Pos-I"
         self.__hcorrectorcurrent__ = "SR-DMS4AP{LOCALBUMP:HCOR}PS-SP"

@@ -8,6 +8,16 @@ record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}Pos-I"){
     field(FTVL, "DOUBLE")
     field(NELM, "6")
 }
+record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:X0-I"){
+    field(DESC, "X0 orbit surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "6")
+}
+record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:Y0-I"){
+    field(DESC, "Y0 orbit surround selected ID")
+    field(FTVL, "DOUBLE")
+    field(NELM, "6")
+}
 record(waveform, "SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I"){
     field(DESC, "X orbit surround selected ID")
     field(FTVL, "DOUBLE")

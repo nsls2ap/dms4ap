@@ -5,7 +5,7 @@
     <include_parent_macros>true</include_parent_macros>
   </macros>
   <wuid>2bc26383:14606d18884:-7f9e</wuid>
-  <boy_version>3.2.10.201405291057</boy_version>
+  <boy_version>3.2.10.201404281417</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
   <height>760</height>
@@ -68,7 +68,7 @@
     <enabled>true</enabled>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>1280</width>
     <line_style>0</line_style>
@@ -112,7 +112,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <text>NSLS II Storage Ring Insertion Device Local Bump</text>
     <font>
-      <opifont.name fontName="Lucida Grande" height="17" style="1">Header 2</opifont.name>
+      <opifont.name fontName="Cantarell" height="15" style="1">Header 2</opifont.name>
     </font>
     <width>1280</width>
     <border_style>0</border_style>
@@ -161,7 +161,7 @@ $(pv_value)</tooltip>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <precision>0</precision>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>1219</width>
     <border_style>13</border_style>
@@ -184,7 +184,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <wuid>-6a09a26f:14889935bef:-7f0a</wuid>
     <scripts />
-    <height>58</height>
+    <height>61</height>
     <name>Target ID</name>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <scale_options>
@@ -203,7 +203,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>167</width>
     <border_style>13</border_style>
@@ -260,7 +260,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>216</width>
     <border_style>13</border_style>
@@ -284,18 +284,25 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.xyGraph" version="1.0.0">
     <trace_1_visible>true</trace_1_visible>
     <trace_1_trace_type>0</trace_1_trace_type>
+    <trace_4_point_style>0</trace_4_point_style>
     <trace_0_trace_color>
-      <color red="21" green="21" blue="196" />
+      <color red="28" green="113" blue="28" />
     </trace_0_trace_color>
     <axis_0_auto_scale>true</axis_0_auto_scale>
+    <trace_3_trace_type>1</trace_3_trace_type>
+    <trace_4_update_delay>100</trace_4_update_delay>
     <axis_1_time_format>0</axis_1_time_format>
     <trace_1_point_size>12</trace_1_point_size>
     <trace_0_plot_mode>0</trace_0_plot_mode>
-    <trace_count>3</trace_count>
+    <trace_count>5</trace_count>
+    <trace_4_concatenate_data>false</trace_4_concatenate_data>
     <trace_2_y_pv_value />
     <axis_0_show_grid>true</axis_0_show_grid>
     <axis_0_log_scale>false</axis_0_log_scale>
-    <trace_1_name>Local Orbit (Y)</trace_1_name>
+    <trace_3_point_size>4</trace_3_point_size>
+    <trace_3_y_axis_index>1</trace_3_y_axis_index>
+    <trace_1_name>Y w/ All offsets</trace_1_name>
+    <trace_4_line_width>1</trace_4_line_width>
     <trace_0_point_size>12</trace_0_point_size>
     <show_legend>true</show_legend>
     <y>135</y>
@@ -305,22 +312,26 @@ $(pv_value)</tooltip>
     <axis_1_visible>true</axis_1_visible>
     <height>487</height>
     <axis_1_maximum>100.0</axis_1_maximum>
+    <trace_4_x_pv>SR-DMS4AP{LOCALBUMP:BPM}Pos-I</trace_4_x_pv>
     <trace_2_x_pv>SR-DMS4AP{LOCALBUMP}S-I</trace_2_x_pv>
     <axis_1_title_font>
       <fontdata fontName="Arial" height="9" style="1" />
     </axis_1_title_font>
     <border_width>1</border_width>
     <trace_2_x_axis_index>0</trace_2_x_axis_index>
+    <trace_3_name>X w/ BBA Only</trace_3_name>
     <axis_0_axis_color>
       <color red="0" green="0" blue="0" />
     </axis_0_axis_color>
     <axis_1_scale_format></axis_1_scale_format>
     <name>Local Bump</name>
     <axis_1_auto_scale_threshold>0.0</axis_1_auto_scale_threshold>
+    <trace_4_buffer_size>100</trace_4_buffer_size>
     <trace_0_line_width>2</trace_0_line_width>
     <trace_2_x_pv_value />
     <show_toolbar>false</show_toolbar>
     <trace_1_update_delay>100</trace_1_update_delay>
+    <trace_4_x_axis_index>0</trace_4_x_axis_index>
     <axis_1_show_grid>true</axis_1_show_grid>
     <axis_0_grid_color>
       <color red="200" green="200" blue="200" />
@@ -330,11 +341,13 @@ $(pv_value)</tooltip>
     <trace_2_y_axis_index>1</trace_2_y_axis_index>
     <axis_0_auto_scale_threshold>0.0</axis_0_auto_scale_threshold>
     <trace_2_trace_type>0</trace_2_trace_type>
-    <trace_0_name>Local Orbit (X)</trace_0_name>
+    <trace_0_name>X w/ All offsets</trace_0_name>
     <trace_1_anti_alias>true</trace_1_anti_alias>
+    <trace_3_x_pv>SR-DMS4AP{LOCALBUMP:BPM}Pos-I</trace_3_x_pv>
     <trace_0_update_mode>0</trace_0_update_mode>
     <trace_1_buffer_size>100</trace_1_buffer_size>
     <axis_0_axis_title>Primary X Axis (0)</axis_0_axis_title>
+    <trace_3_line_width>1</trace_3_line_width>
     <wuid>-21c4c36f:148a29432ce:-7fe7</wuid>
     <trace_2_buffer_size>100</trace_2_buffer_size>
     <axis_1_axis_color>
@@ -347,13 +360,22 @@ $(pv_value)</tooltip>
     <trace_1_update_mode>0</trace_1_update_mode>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <axis_1_axis_title>Local Orbit (X/Y)</axis_1_axis_title>
+    <trace_4_anti_alias>true</trace_4_anti_alias>
+    <trace_4_plot_mode>0</trace_4_plot_mode>
+    <trace_3_update_mode>0</trace_3_update_mode>
     <axis_0_maximum>1000.0</axis_0_maximum>
     <axis_0_scale_font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </axis_0_scale_font>
     <trace_2_point_size>12</trace_2_point_size>
+    <trace_4_y_axis_index>1</trace_4_y_axis_index>
     <trace_1_y_pv_value />
     <axis_0_time_format>0</axis_0_time_format>
+    <trace_4_update_mode>0</trace_4_update_mode>
+    <trace_3_concatenate_data>false</trace_3_concatenate_data>
+    <trace_3_trace_color>
+      <color red="28" green="113" blue="28" />
+    </trace_3_trace_color>
     <trace_1_plot_mode>0</trace_1_plot_mode>
     <axis_1_log_scale>false</axis_1_log_scale>
     <trace_1_point_style>4</trace_1_point_style>
@@ -361,23 +383,32 @@ $(pv_value)</tooltip>
     <title_font>
       <fontdata fontName="Arial" height="12" style="1" />
     </title_font>
+    <trace_3_buffer_size>100</trace_3_buffer_size>
     <axis_1_dash_grid_line>true</axis_1_dash_grid_line>
     <axis_0_visible>true</axis_0_visible>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <trace_1_x_pv_value />
     <axis_0_scale_format></axis_0_scale_format>
+    <trace_4_name>Y w/ BBA Only</trace_4_name>
+    <trace_4_trace_type>1</trace_4_trace_type>
     <trace_0_x_pv>SR-DMS4AP{LOCALBUMP:BPM}Pos-I</trace_0_x_pv>
     <trace_0_y_pv>SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I</trace_0_y_pv>
     <axis_0_title_font>
       <fontdata fontName="Arial" height="9" style="1" />
     </axis_0_title_font>
+    <trace_3_point_style>0</trace_3_point_style>
     <axis_1_auto_scale>true</axis_1_auto_scale>
     <trace_2_update_delay>100</trace_2_update_delay>
+    <trace_4_point_size>4</trace_4_point_size>
     <trace_0_concatenate_data>false</trace_0_concatenate_data>
+    <trace_3_y_pv>SR-DMS4AP{LOCALBUMP:BPM}ORB:X0-I</trace_3_y_pv>
     <actions hook="false" hook_all="false" />
     <trigger_pv_value />
     <trace_1_x_pv>SR-DMS4AP{LOCALBUMP:BPM}Pos-I</trace_1_x_pv>
     <show_plot_area_border>false</show_plot_area_border>
+    <trace_4_trace_color>
+      <color red="21" green="21" blue="196" />
+    </trace_4_trace_color>
     <widget_type>XY Graph</widget_type>
     <enabled>true</enabled>
     <width>1054</width>
@@ -385,6 +416,7 @@ $(pv_value)</tooltip>
     <trigger_pv></trigger_pv>
     <axis_count>2</axis_count>
     <trace_2_name>ID</trace_2_name>
+    <trace_4_visible>true</trace_4_visible>
     <transparent>false</transparent>
     <trace_2_anti_alias>true</trace_2_anti_alias>
     <axis_0_dash_grid_line>true</axis_0_dash_grid_line>
@@ -394,12 +426,15 @@ $(pv_value)</tooltip>
     <tooltip>$(trace_0_y_pv)
 $(trace_0_y_pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+    <trace_4_y_pv>SR-DMS4AP{LOCALBUMP:BPM}ORB:Y0-I</trace_4_y_pv>
     <trace_1_x_axis_index>0</trace_1_x_axis_index>
     <trace_0_y_axis_index>1</trace_0_y_axis_index>
+    <trace_3_visible>true</trace_3_visible>
     <axis_1_scale_font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </axis_1_scale_font>
     <border_style>13</border_style>
+    <trace_3_x_axis_index>0</trace_3_x_axis_index>
     <plot_area_background_color>
       <color red="255" green="255" blue="255" />
     </plot_area_background_color>
@@ -409,11 +444,13 @@ $(trace_0_y_pv_value)</tooltip>
     <trace_1_y_pv>SR-DMS4AP{LOCALBUMP:BPM}ORB:Y-I</trace_1_y_pv>
     <pv_name></pv_name>
     <axis_1_minimum>0.0</axis_1_minimum>
+    <trace_3_plot_mode>0</trace_3_plot_mode>
     <trace_0_visible>true</trace_0_visible>
     <axis_0_minimum>0.0</axis_0_minimum>
     <border_color>
       <color red="0" green="128" blue="255" />
     </border_color>
+    <trace_3_update_delay>100</trace_3_update_delay>
     <scripts />
     <trace_0_anti_alias>true</trace_0_anti_alias>
     <background_color>
@@ -427,6 +464,7 @@ $(trace_0_y_pv_value)</tooltip>
     </trace_2_trace_color>
     <pv_value />
     <trace_1_y_axis_index>1</trace_1_y_axis_index>
+    <trace_3_anti_alias>true</trace_3_anti_alias>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
@@ -444,6 +482,24 @@ $(trace_0_y_pv_value)</tooltip>
         <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
       </rule>
       <rule name="trace_1_visible" prop_id="trace_1_visible" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
+      </rule>
+      <rule name="trace_3_visible" prop_id="trace_3_visible" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">SR-DMS4AP{LOCALBUMP}PLANE-SP</pv>
+      </rule>
+      <rule name="trace_4_visible" prop_id="trace_4_visible" out_exp="false">
         <exp bool_exp="pv0 == 0">
           <value>false</value>
         </exp>
@@ -486,7 +542,7 @@ $(trace_0_y_pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>130</width>
     <border_style>13</border_style>
@@ -537,7 +593,7 @@ $(trace_0_y_pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>97</width>
       <border_style>0</border_style>
@@ -587,7 +643,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>130</width>
     <border_style>13</border_style>
@@ -638,7 +694,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>97</width>
       <border_style>0</border_style>
@@ -688,7 +744,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>226</width>
     <border_style>13</border_style>
@@ -719,7 +775,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>100</width>
       <border_style>3</border_style>
@@ -792,7 +848,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>82</width>
       <border_style>0</border_style>
@@ -836,7 +892,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>196</width>
     <border_style>13</border_style>
@@ -875,7 +931,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Offset</text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>61</width>
       <border_style>0</border_style>
@@ -915,7 +971,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Angle</text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>49</width>
       <border_style>0</border_style>
@@ -964,7 +1020,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>100</width>
       <border_style>0</border_style>
@@ -1015,7 +1071,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>100</width>
       <border_style>0</border_style>
@@ -1057,7 +1113,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>S-Pos.</text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>61</width>
       <border_style>0</border_style>
@@ -1106,7 +1162,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>100</width>
       <border_style>0</border_style>
@@ -1151,7 +1207,7 @@ $(pv_value)</tooltip>
     <text></text>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>38</width>
     <border_style>0</border_style>
@@ -1204,7 +1260,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>151</width>
     <border_style>13</border_style>
@@ -1235,7 +1291,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>111</width>
       <border_style>3</border_style>
@@ -1284,7 +1340,7 @@ $(pv_value)</tooltip>
     <wuid>4bafbd75:1495f4dc1e8:-7fa9</wuid>
     <scripts />
     <height>58</height>
-    <name>Shift (mm)</name>
+    <name>Source Offset (mm)</name>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
@@ -1301,7 +1357,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
     </font>
     <width>163</width>
     <border_style>13</border_style>
@@ -1332,7 +1388,7 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Lucida Grande" height="13" style="0">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
       </font>
       <width>119</width>
       <border_style>3</border_style>

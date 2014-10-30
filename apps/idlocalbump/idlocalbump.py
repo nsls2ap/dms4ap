@@ -215,6 +215,8 @@ class IdLocalBump():
     def _monitororbit(self):
         """
         """
+        orbx0 = [0.0] * self.bpmcounts
+        orby0 = [0.0] * self.bpmcounts
         orbx = [0.0] * self.bpmcounts
         orby = [0.0] * self.bpmcounts
         hcor = [0.0] * self.corscount
@@ -236,15 +238,25 @@ class IdLocalBump():
                 
             for i, bpm in enumerate(self.bpms):
                 x = bpm.x
+                x0 = bpm.x0
                 if isinstance(x, ca.ca_nothing):
                     orbx[i] = 0.0
                 else:
                     orbx[i] = x
+                if isinstance(x0, ca.ca_nothing):
+                    orbx0[i] = 0.0
+                else:
+                    orbx0[i] = x0
                 y = bpm.y
+                y0 = bpm.y0
                 if isinstance(y, ca.ca_nothing):
                     orby[i] = 0.0
                 else:
                     orby[i] = y
+                if isinstance(y0, ca.ca_nothing):
+                    orby0[i] = 0.0
+                else:
+                    orby0[i] = y0
             for i, cor in enumerate(self.cors):
                 h = cor.get("x", unitsys=None, handle="setpoint")
                 if isinstance(h, ca.ca_nothing):
@@ -260,8 +272,9 @@ class IdLocalBump():
             try:
                 ca.caput([self.pvmapping.__anglerb__, self.pvmapping.__positionrb__,
                           self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
+                          self.pvmapping.__bpmorbitx0__, self.pvmapping.__bpmorbity0__,
                           self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
-                         [angle, position, orbx, orby, hcor, vcor])
+                         [angle, position, orbx, orby, orbx0, orby0, hcor, vcor])
             except ca.ca_nothing:
                 print traceback.print_exc()
             cothread.Sleep(1.0)
