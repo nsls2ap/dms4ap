@@ -329,6 +329,11 @@ class IdLocalBump():
             cothread.Yield(0.10)
             norm0, norm1, norm2, corvals = \
                 ap.setIdBump(ename, xc, thetac, plane=fld)
+            angle, position = self._getliveangleandpos(self.bpms[self.bpmcounts/2-1], self.bpms[self.bpmcounts/2])
+            # if the achieved angle and offset are very close to desired values, break
+            # can not distinguish 10urad and 5um.
+            if np.abs(angle - thetac) < 1e-2 and np.abs(xc - position) < 5e-3:
+                break
             if corvals is None:
                 msg = "{0}/{1} Minimum chi^2 achieved: {2} (predicted: {3})".format(i,niter,norm0, norm1)
             else:
