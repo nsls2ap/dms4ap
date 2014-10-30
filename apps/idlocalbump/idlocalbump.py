@@ -34,8 +34,8 @@ class IdLocalBump():
         # initialize hla library
         ap.machines.load(machine, submachine)
 
-        # local bump settings: x shift, y shift, x angle, y angle
-        self.bumpsettings = [0.0, 0.0, 0.0, 0.0]
+        # local bump settings: shift, angle
+        self.bumpsettings = [0.0, 0.0]
 
         self.idlocalbumpthread = None
 
@@ -174,13 +174,13 @@ class IdLocalBump():
         return ca.camonitor(self.pvmapping.__plane__, self.planecallback)
 
     def bumpsettingscallback(self, value, index):
-        """Update local bump settings: [x shift, y shift, x angle, y angle]"""
+        """Update local bump settings: [shift, angle]"""
         self.bumpsettings[index] = value
 
     def monitorbumpsettings(self):
         """Monitor local bump settings"""
-        return ca.camonitor([self.pvmapping.__xshift__, self.pvmapping.__yshift__,
-                             self.pvmapping.__xangle__, self.pvmapping.__yangle__],
+        return ca.camonitor([self.pvmapping.__shift__,
+                             self.pvmapping.__angle__],
                             self.bumpsettingscallback)
 
     def _cleanlocalbump(self):
@@ -303,21 +303,21 @@ class IdLocalBump():
         plane: 0: X plane, 1: Y plane;
         ename: selected insertion device element name;
         source: s position at source position
-        bumpsettings: local bump settings: [x shift, y shift, x angle, y angle]
+        bumpsettings: local bump settings: [shift, angle]
 
         return: delta correctors [H, V]
         """
 
         if plane == 0:
             fld = 'x'
-            xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
-                bumpsettings[2] + bumpsettings[0]
-            thetac = bumpsettings[2]
+            #xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
+            #    bumpsettings[1] + bumpsettings[0]
+            #thetac = bumpsettings[1]
         elif plane == 1:
             fld = 'y'
-            xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
-                bumpsettings[3] + bumpsettings[1]
-            thetac = bumpsettings[3]
+        xc = ((self.idobj.se - self.idobj.sb) / 2.0 - self.sourceposition) * \
+            bumpsettings[1] + bumpsettings[0]
+        thetac = bumpsettings[1]
 
         if self.previoush is None:
             self.previoush = [0.0] * self.corscount
