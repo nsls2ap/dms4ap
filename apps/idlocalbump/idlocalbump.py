@@ -75,15 +75,15 @@ class IdLocalBump():
                 ca.caput(self.pvmapping.__status__, "No device selected",
                          datatype=DBR_CHAR_STR)
             except ca.ca_nothing:
-                print "Cound not set status pv."
+                print "Could not set status pv."
                 return
         else:
             try:
                 self.idobj = ap.getElements(self.selecteddevice.lower())[0]
                 allbpms = ap.getGroupMembers(["BPM", "UBPM"], op="union")
                 leftbpms = [b for b in allbpms if b.se < self.idobj.sb]
-                rightbpms = [b for b in allbpms if b.sb >self.idobj.se]
-                bpms = leftbpms[-self.bpmcounts / 2:] + rightbpms [:self.bpmcounts / 2 ]
+                rightbpms = [b for b in allbpms if b.sb > self.idobj.se]
+                bpms = leftbpms[-self.bpmcounts / 2:] + rightbpms[:self.bpmcounts / 2]
                 #bpms = ap.getNeighbors(self.selecteddevice.lower(), "BPM", self.bpmcounts / 2)
                 cors = ap.getNeighbors(self.selecteddevice.lower(), "COR", self.corscount / 2)
 
@@ -168,6 +168,13 @@ class IdLocalBump():
     def planecallback(self, value):
         """Set source plane when it is changed."""
         self.plane = value
+        if self.selecteddevice != "NULL":
+            try:
+                ca.caput(self.pvmapping.__shift__, ca.caget(self.pvmapping.__positionrb__))
+                ca.caput(self.pvmapping.__angle____, ca.caget(self.pvmapping.__anglerb__))
+            except ca.ca_nothing:
+                # do not do anything for this exception.
+                pass
 
     def monitorplane(self):
         """Start a process to monitor source plane."""
