@@ -168,10 +168,18 @@ class IdLocalBump():
     def planecallback(self, value):
         """Set source plane when it is changed."""
         self.plane = value
+        cothread.Sleep(2.0)
         if self.selecteddevice != "NULL":
             try:
                 ca.caput(self.pvmapping.__shift__, ca.caget(self.pvmapping.__positionrb__))
-                ca.caput(self.pvmapping.__angle____, ca.caget(self.pvmapping.__anglerb__))
+                ca.caput(self.pvmapping.__angle__, ca.caget(self.pvmapping.__anglerb__))
+            except ca.ca_nothing:
+                # do not do anything for this exception.
+                pass
+        else:
+            try:
+                ca.caput(self.pvmapping.__shift__, 0.0)
+                ca.caput(self.pvmapping.__angle__, 0.0)
             except ca.ca_nothing:
                 # do not do anything for this exception.
                 pass
