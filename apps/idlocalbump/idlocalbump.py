@@ -205,12 +205,18 @@ class IdLocalBump():
         if self.plane == 0:
             p0 = bpm0.x
             p1 = bpm1.x
+            p0bba = bpm0.x0
+            p1bba = bpm1.x0
         elif self.plane == 1:
             p0 = bpm0.y
             p1 = bpm1.y
+            p0bba = bpm0.y0
+            p1bba = bpm1.y0
         angle = (p1 - p0)/(bpm1.se - bpm0.se)
         position = angle * (self.idobj.sb+self.sourceposition-bpm0.se) + p0
-        return angle, position
+        angle_bba = (p1bba - p0bba)/(bpm1.se - bpm0.se)
+        position_bba = angle_bba * (self.idobj.sb+self.sourceposition-bpm0.se) + p0bba
+        return angle, position, angle_bba, position_bba
 
     def _monitororbit(self):
         """
@@ -268,13 +274,15 @@ class IdLocalBump():
                     vcor[i] = 0.0
                 else:
                     vcor[i] = v
-            angle, position = self._getliveangleandpos(self.bpms[self.bpmcounts/2-1], self.bpms[self.bpmcounts/2])
+            angle, position, angle_bba, position_bba = self._getliveangleandpos(self.bpms[self.bpmcounts/2-1], self.bpms[self.bpmcounts/2])
             try:
                 ca.caput([self.pvmapping.__anglerb__, self.pvmapping.__positionrb__,
+                          self.pvmapping.__anglerb0__, self.pvmapping.__positionrb0__,
                           self.pvmapping.__bpmorbitx__, self.pvmapping.__bpmorbity__,
                           self.pvmapping.__bpmorbitx0__, self.pvmapping.__bpmorbity0__,
                           self.pvmapping.__hcorrectorcurrent__, self.pvmapping.__vcorrectorcurrent__],
-                         [angle, position, orbx, orby, orbx0, orby0, hcor, vcor])
+                         [angle, position, angle_bba, position_bba,
+                          orbx, orby, orbx0, orby0, hcor, vcor])
             except ca.ca_nothing:
                 print traceback.print_exc()
             cothread.Sleep(1.0)
@@ -342,7 +350,7 @@ class IdLocalBump():
             cothread.Yield(0.10)
             norm0, norm1, norm2, corvals = \
                 ap.setIdBump(ename, xc, thetac, plane=fld)
-            angle, position = self._getliveangleandpos(self.bpms[self.bpmcounts/2-1], self.bpms[self.bpmcounts/2])
+            angle, position, _, _ = self._getliveangleandpos(self.bpms[self.bpmcounts/2-1], self.bpms[self.bpmcounts/2])
             # if the achieved angle and offset are very close to desired values, break
             # can not distinguish 10urad and 5um.
             if np.abs(angle - thetac) < 1e-2 and np.abs(xc - position) < 5e-3:

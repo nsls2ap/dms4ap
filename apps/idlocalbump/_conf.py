@@ -11,8 +11,12 @@ class PvMapping(object):
         #self.__yangle__ = "SR-DMS4AP{LOCALBUMP}ANGLE:Y-SP"
         self.__shift__ = "SR-DMS4AP{LOCALBUMP}SHIFT-SP"
         self.__angle__ = "SR-DMS4AP{LOCALBUMP}ANGLE-SP"
+        # with all offsets
         self.__anglerb__ = "SR-DMS4AP{LOCALBUMP}ANGLE-I"
         self.__positionrb__ = "SR-DMS4AP{LOCALBUMP}POS-I"
+        # with BBA offset only
+        self.__anglerb0__ = "SR-DMS4AP{LOCALBUMP}ANGLE:BBA-I"
+        self.__positionrb0__ = "SR-DMS4AP{LOCALBUMP}POS:BBA-I"
 
         self.__bpmposition__ = "SR-DMS4AP{LOCALBUMP:BPM}Pos-I"
         self.__bpmorbitx__ = "SR-DMS4AP{LOCALBUMP:BPM}ORB:X-I"
